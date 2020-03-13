@@ -1830,7 +1830,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #0debbe;
+  background: #aff406;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3008,6 +3008,9 @@ pre .javascript .function {
 }
 .highlight {
   position: relative;
+}
+body {
+  background: url("https://cdn.jsdelivr.net/gh/solstice23/solstice23-img/blog_background6_min.webp");
 }
 .btn-copy {
   display: inline-block;
