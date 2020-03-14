@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="test," />
+  <meta name="keywords" content="notes," />
 
 
 
@@ -83,17 +83,21 @@
 
 
 
-<meta name="description" content="Markdown 渲染测试一级标题二级标题三级标题四级标题五级标题六级标题链接： 小蛙博客   引用区块  引用区块内公式 $C &#x3D; 2 \pi r$  引用区块内链接： 小蛙博客   $\text{公式} C&#x3D;2 \pi r$ 代码： 123456789101112131415161718#include &lt;bits&#x2F;stdc++.h&gt;using namespace std;long">
+<meta name="description" content="本文大量采用Mathjax 渲染，对于某些性能不佳的电脑可能会有点卡，敬请谅解。   二叉树的性质 $二叉树的每个节点最多只有 2 个子树 （不存在度 &gt;2 的节点） 有左右之分，不可以颠倒$ $二叉树的第 i 层最多有 2^{i-1}个结点$ $设二叉树的深度为 k 则: 二叉树最多有 2^{k}-1 个结点$ $对任何一棵二叉树 T ,设其叶节点数为 n{0} 其度为 2 的结点个">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Markdown渲染测试">
-<meta property="og:url" content="http://guiguxiaowa.github.io/2020/03/10/Markdown%E6%B8%B2%E6%9F%93%E6%B5%8B%E8%AF%95/index.html">
+<meta property="og:title" content="二叉树学习笔记">
+<meta property="og:url" content="http://guiguxiaowa.github.io/2020/03/14/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="小蛙博客">
-<meta property="og:description" content="Markdown 渲染测试一级标题二级标题三级标题四级标题五级标题六级标题链接： 小蛙博客   引用区块  引用区块内公式 $C &#x3D; 2 \pi r$  引用区块内链接： 小蛙博客   $\text{公式} C&#x3D;2 \pi r$ 代码： 123456789101112131415161718#include &lt;bits&#x2F;stdc++.h&gt;using namespace std;long">
-<meta property="article:published_time" content="2020-03-10T03:23:03.998Z">
-<meta property="article:modified_time" content="2020-03-11T04:40:00.750Z">
+<meta property="og:description" content="本文大量采用Mathjax 渲染，对于某些性能不佳的电脑可能会有点卡，敬请谅解。   二叉树的性质 $二叉树的每个节点最多只有 2 个子树 （不存在度 &gt;2 的节点） 有左右之分，不可以颠倒$ $二叉树的第 i 层最多有 2^{i-1}个结点$ $设二叉树的深度为 k 则: 二叉树最多有 2^{k}-1 个结点$ $对任何一棵二叉树 T ,设其叶节点数为 n{0} 其度为 2 的结点个">
+<meta property="og:image" content="https://res.jisuanke.com/img/upload/20180620/e77476805c7870ae2dc79d813f82ea76bb14377c.png">
+<meta property="og:image" content="https://res.jisuanke.com/img/upload/20180620/6a16f1bdd5cb2b6ffe2deaaf7b62f1a2410010d0.png">
+<meta property="og:image" content="https://res.jisuanke.com/img/upload/20180801/ff02b2198b7d5045a8b750d14e0ce23b91262eb0.png">
+<meta property="article:published_time" content="2020-03-14T10:51:08.000Z">
+<meta property="article:modified_time" content="2020-03-14T10:54:27.986Z">
 <meta property="article:author" content="littlefrog">
-<meta property="article:tag" content="test">
+<meta property="article:tag" content="notes">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://res.jisuanke.com/img/upload/20180620/e77476805c7870ae2dc79d813f82ea76bb14377c.png">
 
 
 
@@ -123,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://guiguxiaowa.github.io/2020/03/10/Markdown渲染测试/"/>
+  <link rel="canonical" href="http://guiguxiaowa.github.io/2020/03/14/二叉树学习笔记/"/>
 
 
 
 
 
-  <title>Markdown渲染测试 | 小蛙博客</title>
+  <title>二叉树学习笔记 | 小蛙博客</title>
   
 
 
@@ -246,7 +250,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://guiguxiaowa.github.io/2020/03/10/Markdown%E6%B8%B2%E6%9F%93%E6%B5%8B%E8%AF%95/">
+    <link itemprop="mainEntityOfPage" href="http://guiguxiaowa.github.io/2020/03/14/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="littlefrog">
@@ -263,7 +267,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Markdown渲染测试</h2>
+          <h2 class="post-title" itemprop="name headline">二叉树学习笔记</h2>
         
 
         <div class="post-meta">
@@ -275,8 +279,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-10T11:23:03+08:00">
-                2020-03-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-14T18:51:08+08:00">
+                2020-03-14
               </time>
             
 
@@ -298,8 +302,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Test/" itemprop="url" rel="index">
-                    <span itemprop="name">Test</span>
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
                   </a>
                 </span>
 
@@ -329,7 +333,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  146
+                  992
                 </span>
               
 
@@ -345,7 +349,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -366,13 +370,49 @@
       
 
       
-        <h2 id="Markdown-渲染测试"><a href="#Markdown-渲染测试" class="headerlink" title="Markdown 渲染测试"></a>Markdown 渲染测试</h2><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><p>链接： <a href="https://www.guiguxiaowa.github.io" target="_blank" rel="noopener">小蛙博客</a> </p>
-<blockquote>
-<p>引用区块 <br> 引用区块内公式 $C = 2 \pi r$ <br> 引用区块内链接： <a href="https://www.guiguxiaowa.github.io" target="_blank" rel="noopener">小蛙博客</a> </p>
-</blockquote>
-<p>$\text{公式} C=2 \pi r$</p>
-<p>代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> n, ans = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> ss[<span class="number">4</span>] = &#123;<span class="number">6</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">2</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">while</span>(n&gt;<span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=n % <span class="number">10</span>;++i) &#123;</span><br><span class="line">            <span class="keyword">if</span>(i != <span class="number">5</span>) &#123;</span><br><span class="line">                ans = ans * i % <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        n /= <span class="number">5</span>;</span><br><span class="line">        ans = ans * ss[n % <span class="number">4</span>] % <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <div class="infocard warning">
+<i class="fa fa-exclamation-triangle fa-2x" aria-hidden="true"></i> 
+<p>本文大量采用Mathjax 渲染，对于某些性能不佳的电脑可能会有点卡，敬请谅解。</p>
+</div>
+
+<h2 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h2><ol>
+<li>$二叉树的每个节点最多只有 2 个子树 （不存在度 &gt;2 的节点） 有左右之分，不可以颠倒$</li>
+<li>$二叉树的第 i 层最多有 2^{i-1}个结点$</li>
+<li>$设二叉树的深度为 k 则: 二叉树最多有 2^{k}-1 个结点$</li>
+<li>$对任何一棵二叉树 T ,设其叶节点数为 n<em>{0} 其度为 2 的结点个数为 n</em>{2} 则：n_{0} = n{2} + 1$<br><br></li>
+</ol>
+<h2 id="某些特殊的二叉树"><a href="#某些特殊的二叉树" class="headerlink" title="某些特殊的二叉树"></a>某些特殊的二叉树</h2><ol>
+<li><p>满二叉树：<br><img src="https://res.jisuanke.com/img/upload/20180620/e77476805c7870ae2dc79d813f82ea76bb14377c.png">&lt;/image&gt;<br><p>满二叉树示意图</p><br>$深度为 k 且有 2^{k}-1 个结点,就是一棵满二叉树，满二叉树的每一层都是满的$</p>
+</li>
+<li><p>完全二叉树：<br><img src="https://res.jisuanke.com/img/upload/20180620/6a16f1bdd5cb2b6ffe2deaaf7b62f1a2410010d0.png">&lt;/image&gt;<br><p>完全二叉树示意图</p><br>$除最后一层外，其他层都是满的，或在右边连续缺少若干结点，就是一棵完全二叉树，设有 n 个结点的完全二叉树的深度为log_{2}(n+1)$<br>$深度为 k 的完全二叉树，至少 2^{k-1} 个结点，最多 2^{k}-1 个结点$</p>
+</li>
+<li><p>二叉搜索树：<br><img src="https://res.jisuanke.com/img/upload/20180801/ff02b2198b7d5045a8b750d14e0ce23b91262eb0.png">&lt;/image&gt;<br><p>二叉搜索树示意图</p><br>排序二叉树有如下性质</p>
+<ul>
+<li>$若左子树不空，则左子树上所有节点均小于根节点的值$</li>
+<li>$若右子树不空，则右子树上所有节点均大于根节点的值$</li>
+<li>$左右子树也都是二叉搜索树$</li>
+<li>$二叉搜索树可以为空树$</li>
+</ul>
+</li>
+</ol>
+<h2 id="遍历二叉树"><a href="#遍历二叉树" class="headerlink" title="遍历二叉树"></a>遍历二叉树</h2><pre><code>- 先序遍历
+  $先序遍历是指先访问根节点，再依次访问左子树和右子树$
+
+- 中序遍历
+  $中序遍历是指先访问左子树，再依次访问根节点和右子树$
+
+- 后序遍历
+  $先序遍历是指先访问左子树和右子树，最后再访问根节点$
+
+- 层次遍历
+  $跟“扩展式广度优先搜索（俗称“广搜”）相同”$
+
+- 四种遍历参考代码：
+</code></pre><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> son[N][<span class="number">2</span>], root;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v1, v2, v3, v4;</span><br><span class="line"><span class="comment">//先序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preorder</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (u == <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    v1.push_back(u);</span><br><span class="line">    preorder(son[u][<span class="number">0</span>]);</span><br><span class="line">    preorder(son[u][<span class="number">1</span>]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//中序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inorder</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (u == <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    inorder(son[u][<span class="number">0</span>]);</span><br><span class="line">    v2.push_back(u);</span><br><span class="line">    inorder(son[u][<span class="number">1</span>]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//后序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">postorder</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (u == <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    postorder(son[u][<span class="number">0</span>]);</span><br><span class="line">    postorder(son[u][<span class="number">1</span>]);</span><br><span class="line">    v3.push_back(u);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//层次遍历</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">levelorder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">    <span class="keyword">if</span> (root != <span class="number">0</span>) q.push(root);</span><br><span class="line">    <span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> u = q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        v4.push_back(u);</span><br><span class="line">        <span class="keyword">if</span> (son[u][<span class="number">0</span>] != <span class="number">0</span>) q.push(son[u][<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">if</span> (son[u][<span class="number">1</span>] != <span class="number">0</span>) q.push(son[u][<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="根据遍历结果复原二叉树："><a href="#根据遍历结果复原二叉树：" class="headerlink" title="根据遍历结果复原二叉树："></a>根据遍历结果复原二叉树：</h2><p>注意！先序遍历和后序遍历不能确定唯一的二叉树！</p>
+<p>对于先序遍历和中序遍历，我们只需在先序遍历中确定根节点，并且靠中序遍历找出其位置，再依次还原左子树和右子树，即可确定二叉树。<br>对于后序遍历和中序遍历，也可按照同样的方法进行还原，确定唯一的二叉树。</p>
+<p>参考代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a数组为中序遍历，b数组为先序遍历</span></span><br><span class="line"><span class="comment">// x1、y1为当前子树在a数组中下标的范围，x2为前子树在b数组中下标的起点</span></span><br><span class="line"><span class="keyword">int</span> a[N], b[N], son[N][<span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x1, <span class="keyword">int</span> y1, <span class="keyword">int</span> x2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pos = x1;</span><br><span class="line">    <span class="keyword">while</span> (a[pos] != b[x2]) &#123; <span class="comment">// 在中序遍历里找到当前子树的根</span></span><br><span class="line">        pos++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> len1 = pos - x1, len2 = y1 - pos; <span class="comment">// 在中序遍历里确定当前子树的左子树和右子树大小</span></span><br><span class="line">    <span class="keyword">if</span> (len1 &gt; <span class="number">0</span>) &#123; <span class="comment">// 如果有左子树，那么根据先序遍历确定这个节点的左孩子</span></span><br><span class="line">        son[b[x2]][<span class="number">0</span>] = b[x2 + <span class="number">1</span>];</span><br><span class="line">        dfs(x1, pos - <span class="number">1</span>, x2 + <span class="number">1</span>); <span class="comment">// 递归进入左子树</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (len2 &gt; <span class="number">0</span>) &#123; <span class="comment">// 如果有右子树，那么根据先序遍历确定这个节点的右孩子</span></span><br><span class="line">        son[b[x2]][<span class="number">1</span>] = b[x2 + <span class="number">1</span> + len1];</span><br><span class="line">        dfs(pos + <span class="number">1</span>, y1, x2 + <span class="number">1</span> + len1); <span class="comment">// 递归进入右子树</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -392,7 +432,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://guiguxiaowa.github.io/2020/03/10/Markdown%E6%B8%B2%E6%9F%93%E6%B5%8B%E8%AF%95/" title="Markdown渲染测试">http://guiguxiaowa.github.io/2020/03/10/Markdown%E6%B8%B2%E6%9F%93%E6%B5%8B%E8%AF%95/</a>
+    <a href="http://guiguxiaowa.github.io/2020/03/14/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="二叉树学习笔记">http://guiguxiaowa.github.io/2020/03/14/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -407,7 +447,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/test/" rel="tag"><i class="fa fa-tag"></i>test</a>
+            <a href="/tags/notes/" rel="tag"><i class="fa fa-tag"></i>notes</a>
           
         </div>
       
@@ -420,15 +460,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2020/03/14/%E5%8D%9A%E6%96%87%E6%8F%90%E7%A4%BA%E6%A1%86%E6%B5%8B%E8%AF%95/" rel="next" title="博文提示框测试">
+                <i class="fa fa-chevron-left"></i> 博文提示框测试
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/11/%E9%A2%98%E8%A7%A3%20-%20%E6%B4%9B%E8%B0%B7P1604%E3%80%90B%E8%BF%9B%E5%88%B6%E6%98%9F%E7%90%83%E3%80%91/" rel="prev" title="题解 - 洛谷P1604【B进制星球】">
-                题解 - 洛谷P1604【B进制星球】 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -585,7 +625,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-渲染测试"><span class="nav-number">1.</span> <span class="nav-text">Markdown 渲染测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一级标题"><span class="nav-number"></span> <span class="nav-text">一级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二级标题"><span class="nav-number">1.</span> <span class="nav-text">二级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三级标题"><span class="nav-number">1.1.</span> <span class="nav-text">三级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#四级标题"><span class="nav-number">1.1.1.</span> <span class="nav-text">四级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#五级标题"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">五级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#六级标题"><span class="nav-number">1.1.1.1.1.</span> <span class="nav-text">六级标题</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树的性质"><span class="nav-number">1.</span> <span class="nav-text">二叉树的性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#某些特殊的二叉树"><span class="nav-number">2.</span> <span class="nav-text">某些特殊的二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遍历二叉树"><span class="nav-number">3.</span> <span class="nav-text">遍历二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#根据遍历结果复原二叉树："><span class="nav-number">4.</span> <span class="nav-text">根据遍历结果复原二叉树：</span></a></li></ol></div>
             
 
           </div>
