@@ -93,7 +93,7 @@
 <meta property="og:image" content="https://res.jisuanke.com/img/upload/20180620/6a16f1bdd5cb2b6ffe2deaaf7b62f1a2410010d0.png">
 <meta property="og:image" content="https://res.jisuanke.com/img/upload/20180801/ff02b2198b7d5045a8b750d14e0ce23b91262eb0.png">
 <meta property="article:published_time" content="2020-03-14T10:51:08.000Z">
-<meta property="article:modified_time" content="2020-03-14T11:12:52.241Z">
+<meta property="article:modified_time" content="2020-03-14T12:52:03.523Z">
 <meta property="article:author" content="littlefrog">
 <meta property="article:tag" content="notes">
 <meta name="twitter:card" content="summary">
@@ -379,12 +379,12 @@
 <li>$二叉树的每个节点最多只有 2 个子树 （不存在度 &gt;2 的节点） 有左右之分，不可以颠倒$</li>
 <li>$二叉树的第 i 层最多有 2^{i-1}个结点$</li>
 <li>$设二叉树的深度为 k 则: 二叉树最多有 2^{k}-1 个结点$</li>
-<li>$对任何一棵二叉树 T ,设其叶节点数为 n<em>{0} 其度为 2 的结点个数为 n</em>{2} 则：n_{0} = n{2} + 1$<br><br></li>
+<li>$对任何一棵二叉树 T ,设其叶节点数为 n<em>{0} 其度为 2 的结点个数为 n</em>{2} 则：n_{0} = n{2} + 1$</li>
 </ol>
 <h2 id="某些特殊的二叉树"><a href="#某些特殊的二叉树" class="headerlink" title="某些特殊的二叉树"></a>某些特殊的二叉树</h2><ol>
 <li><p>满二叉树：<br><img src="https://res.jisuanke.com/img/upload/20180620/e77476805c7870ae2dc79d813f82ea76bb14377c.png"></img><br><p>满二叉树示意图</p><br>$深度为 k 且有 2^{k}-1 个结点,就是一棵满二叉树，满二叉树的每一层都是满的$</p>
 </li>
-<li><p>完全二叉树：<br><img src="https://res.jisuanke.com/img/upload/20180620/6a16f1bdd5cb2b6ffe2deaaf7b62f1a2410010d0.png"></img><br><p>完全二叉树示意图</p><br>$除最后一层外，其他层都是满的，或在右边连续缺少若干结点，就是一棵完全二叉树，设有 n 个结点的完全二叉树的深度为log_{2}(n+1)$<br>$深度为 k 的完全二叉树，至少 2^{k-1} 个结点，最多 2^{k}-1 个结点$</p>
+<li><p>完全二叉树：<br><img src="https://res.jisuanke.com/img/upload/20180620/6a16f1bdd5cb2b6ffe2deaaf7b62f1a2410010d0.png"></img><br><p>完全二叉树示意图</p><br>$除最后一层外，其他层都是满的，或在右边连续缺少若干结点，就是一棵完全二叉树$<br>$设有 n 个结点的完全二叉树的深度为log_{2}(n+1)$<br>$深度为 k 的完全二叉树，至少 2^{k-1} 个结点，最多 2^{k}-1 个结点$</p>
 </li>
 <li><p>二叉搜索树：<br><img src="https://res.jisuanke.com/img/upload/20180801/ff02b2198b7d5045a8b750d14e0ce23b91262eb0.png"></img><br><p>二叉搜索树示意图</p><br>排序二叉树有如下性质</p>
 <ul>
@@ -410,7 +410,7 @@
 </ul>
 <p>四种遍历参考代码：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> son[N][<span class="number">2</span>], root;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v1, v2, v3, v4;</span><br><span class="line"><span class="comment">//先序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preorder</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (u == <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    v1.push_back(u);</span><br><span class="line">    preorder(son[u][<span class="number">0</span>]);</span><br><span class="line">    preorder(son[u][<span class="number">1</span>]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//中序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inorder</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (u == <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    inorder(son[u][<span class="number">0</span>]);</span><br><span class="line">    v2.push_back(u);</span><br><span class="line">    inorder(son[u][<span class="number">1</span>]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//后序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">postorder</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (u == <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    postorder(son[u][<span class="number">0</span>]);</span><br><span class="line">    postorder(son[u][<span class="number">1</span>]);</span><br><span class="line">    v3.push_back(u);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//层次遍历</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">levelorder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">    <span class="keyword">if</span> (root != <span class="number">0</span>) q.push(root);</span><br><span class="line">    <span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> u = q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        v4.push_back(u);</span><br><span class="line">        <span class="keyword">if</span> (son[u][<span class="number">0</span>] != <span class="number">0</span>) q.push(son[u][<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">if</span> (son[u][<span class="number">1</span>] != <span class="number">0</span>) q.push(son[u][<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="根据遍历结果复原二叉树："><a href="#根据遍历结果复原二叉树：" class="headerlink" title="根据遍历结果复原二叉树："></a>根据遍历结果复原二叉树：</h2><p>注意！先序遍历和后序遍历不能确定唯一的二叉树！</p>
+<h2 id="根据遍历结果复原二叉树"><a href="#根据遍历结果复原二叉树" class="headerlink" title="根据遍历结果复原二叉树"></a>根据遍历结果复原二叉树</h2><p>注意！先序遍历和后序遍历不能确定唯一的二叉树！</p>
 <p>对于先序遍历和中序遍历，我们只需在先序遍历中确定根节点，并且靠中序遍历找出其位置，再依次还原左子树和右子树，即可确定二叉树。<br>对于后序遍历和中序遍历，也可按照同样的方法进行还原，确定唯一的二叉树。</p>
 <p>参考代码：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a数组为中序遍历，b数组为先序遍历</span></span><br><span class="line"><span class="comment">// x1、y1为当前子树在a数组中下标的范围，x2为前子树在b数组中下标的起点</span></span><br><span class="line"><span class="keyword">int</span> a[N], b[N], son[N][<span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x1, <span class="keyword">int</span> y1, <span class="keyword">int</span> x2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pos = x1;</span><br><span class="line">    <span class="keyword">while</span> (a[pos] != b[x2]) &#123; <span class="comment">// 在中序遍历里找到当前子树的根</span></span><br><span class="line">        pos++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> len1 = pos - x1, len2 = y1 - pos; <span class="comment">// 在中序遍历里确定当前子树的左子树和右子树大小</span></span><br><span class="line">    <span class="keyword">if</span> (len1 &gt; <span class="number">0</span>) &#123; <span class="comment">// 如果有左子树，那么根据先序遍历确定这个节点的左孩子</span></span><br><span class="line">        son[b[x2]][<span class="number">0</span>] = b[x2 + <span class="number">1</span>];</span><br><span class="line">        dfs(x1, pos - <span class="number">1</span>, x2 + <span class="number">1</span>); <span class="comment">// 递归进入左子树</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (len2 &gt; <span class="number">0</span>) &#123; <span class="comment">// 如果有右子树，那么根据先序遍历确定这个节点的右孩子</span></span><br><span class="line">        son[b[x2]][<span class="number">1</span>] = b[x2 + <span class="number">1</span> + len1];</span><br><span class="line">        dfs(pos + <span class="number">1</span>, y1, x2 + <span class="number">1</span> + len1); <span class="comment">// 递归进入右子树</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -602,6 +602,12 @@
                         <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
                 
+                  <span class="links-of-author-item">
+                    <a href="http://wpa.qq.com/msgrd?v=3&uin=3443816512&Site=&Menu=yes" target="_blank" title="QQ交谈">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ交谈</a>
+                  </span>
+                
             </div>
           
 
@@ -609,6 +615,20 @@
           
 
           
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/crab-in-the-northeast/" title="东北小蟹蟹" target="_blank">东北小蟹蟹</a>
+                  </li>
+                
+              </ul>
+            </div>
           
 
           
@@ -626,7 +646,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树的性质"><span class="nav-number">1.</span> <span class="nav-text">二叉树的性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#某些特殊的二叉树"><span class="nav-number">2.</span> <span class="nav-text">某些特殊的二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遍历二叉树"><span class="nav-number">3.</span> <span class="nav-text">遍历二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#根据遍历结果复原二叉树："><span class="nav-number">4.</span> <span class="nav-text">根据遍历结果复原二叉树：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树的性质"><span class="nav-number">1.</span> <span class="nav-text">二叉树的性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#某些特殊的二叉树"><span class="nav-number">2.</span> <span class="nav-text">某些特殊的二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遍历二叉树"><span class="nav-number">3.</span> <span class="nav-text">遍历二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#根据遍历结果复原二叉树"><span class="nav-number">4.</span> <span class="nav-text">根据遍历结果复原二叉树</span></a></li></ol></div>
             
 
           </div>
