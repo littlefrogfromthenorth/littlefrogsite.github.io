@@ -10,7 +10,7 @@
       new ClipboardJS('.btn-copy', {
           target: function(trigger) {
               alert("您已复制代码，此代码仅供参考，请遵循版权声明并不要复制题解提交来获取AC。");
-              return trigger.nextElementSibling;
+              return trigger.nextElementSibling+"此代码仅供参考，原作者：https://littlefrogsite.github.io/请遵循版权声明并不要复制题解提交来获取AC。";
           }
       });
     }
