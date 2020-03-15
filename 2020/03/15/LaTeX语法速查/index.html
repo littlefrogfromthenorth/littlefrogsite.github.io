@@ -83,14 +83,14 @@
 
 
 
-<meta name="description" content="LaTeX数学公式大全转载请在文章页面明显位置注明出处。ps:ps: 资料来源于 WikiWiki ，凑合着看吧，不过洛谷的 LaTeXLaTeX 对有些符号或功能并不支持，我就没有打上。本文纯手打。排版不好，见谅。Update\ 2018&#x2F;6&#x2F;5:Update 2018&#x2F;6&#x2F;5: 最近重新在 WikiWiki 上搜了下，悲催的发现我做来源的页面是古老版本……，现在的页面将这些符号大多重分类，也就">
+<meta name="description" content="转载自【https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;blog&#x2F;IowaBattleship&#x2F;latex-gong-shi-tai-quan】">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LaTeX语法速查">
 <meta property="og:url" content="http://guiguxiaowa.github.io/2020/03/15/LaTeX%E8%AF%AD%E6%B3%95%E9%80%9F%E6%9F%A5/index.html">
 <meta property="og:site_name" content="小蛙博客">
-<meta property="og:description" content="LaTeX数学公式大全转载请在文章页面明显位置注明出处。ps:ps: 资料来源于 WikiWiki ，凑合着看吧，不过洛谷的 LaTeXLaTeX 对有些符号或功能并不支持，我就没有打上。本文纯手打。排版不好，见谅。Update\ 2018&#x2F;6&#x2F;5:Update 2018&#x2F;6&#x2F;5: 最近重新在 WikiWiki 上搜了下，悲催的发现我做来源的页面是古老版本……，现在的页面将这些符号大多重分类，也就">
+<meta property="og:description" content="转载自【https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;blog&#x2F;IowaBattleship&#x2F;latex-gong-shi-tai-quan】">
 <meta property="article:published_time" content="2020-03-15T11:03:30.000Z">
-<meta property="article:modified_time" content="2020-03-15T11:03:58.429Z">
+<meta property="article:modified_time" content="2020-03-15T11:08:41.476Z">
 <meta property="article:author" content="littlefrog">
 <meta name="twitter:card" content="summary">
 
@@ -306,7 +306,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  5.7k
+                  15
                 </span>
               
 
@@ -322,7 +322,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  30
+                  1
                 </span>
               
             </div>
@@ -343,235 +343,7 @@
       
 
       
-        <p>LaTeX数学公式大全<br>转载请在文章页面明显位置注明出处。<br>ps:ps: 资料来源于 WikiWiki ，凑合着看吧，不过洛谷的 LaTeXLaTeX 对有些符号或功能并不支持，我就没有打上。<br>本文纯手打。<br>排版不好，见谅。<br>Update\ 2018/6/5:Update 2018/6/5: 最近重新在 WikiWiki 上搜了下，悲催的发现我做来源的页面是古老版本……，现在的页面将这些符号大多重分类，也就是说我要重构整篇文章……（哭<br>Update\ 2018/6/20:Update 2018/6/20: 最近发现一个式子可以使用背景颜色，然而 WikiWiki 上并没有 QAQQAQ 。顺便将不同类别用分割线隔了下。<br>Update\ 2018/6/24:Update 2018/6/24: 在打题解的时候突然发现在洛谷的 LaTeXLaTeX 里还是可以插入中文的，所以就加了下，见字体一栏。<br>Update\ 2019/3/6:Update 2019/3/6: 在用 LaTeXLaTeX 写题解的时候想起现在数学公式里的多行等式的语法是有变化的，而 WikiWiki 上的是老语法，所以无法使用，因此用新语法还是可以在洛谷上使用多行等式的，同时添加了一种字体、关于插入数学公式的语法、给数学公式加上方框的公式、矩阵嵌套以及一个特殊字符，修改了一些介绍、标题。<br>另外吐槽一句，现在这篇博客的修改界面真的超级卡。。打一字响应半天。。<br>Update\ 2019/4/22:Update 2019/4/22: 修正两个小错误，感谢 @wjyyy 和 @Struct瓶子 指出错误。<br>Update\ 2019/6/23:Update 2019/6/23: 修正命令\not的使用，也许是我以前搞错语法了，反正现在是能正常使用的，感谢 @wxwoo 提醒了我检查该命令。<br>Update\ 2019/6/29:Update 2019/6/29: 应 @star_city 的要求，添加了可在其上写文字的箭头命令。</p>
-<p>\mathtt{LaTeX}LaTeX 入门</p>
-<p>数学公式的插入<br>将数学公式写在$ $之间，代表的是插入行内数学公式（通常称为行内模式）。<br>将数学公式写在<script type="math/tex"> </script>之间，会使公式独立成一行并强制居中（通常称为独立模式）。</p>
-<p>声调 // 变音符号<br> $\dot{a} \ddot{a} \acute{a} \grave{a}$<br>\quad\dot{a}\quad\ddot{a}\quad\acute{a}\quad\grave{a}<br>a<br>˙</p>
-<p>a<br>¨</p>
-<p>a<br>ˊ</p>
-<p>a<br>ˋ</p>
-<p> $\check{a} \breve{a} \tilde{a} \bar{a}$<br>\quad\check{a}\quad\breve{a}\quad\tilde{a}\quad\bar{a}<br>a<br>ˇ</p>
-<p>a<br>˘</p>
-<p>a<br>~</p>
-<p>a<br>ˉ</p>
-<p> $\hat{a} \widehat{a} \vec{a}$<br>\quad\hat{a}\quad\widehat{a}\quad\vec{a}<br>a<br>^</p>
-<p>a</p>
-<p>a</p>
-<p>标准函数<br> $\exp_a b=a^b \exp b=e^b 10^m$<br>\quad\exp_a b=a^b\quad\exp b=e^b\quad10^mexp<br>a<br>​     b=a<br>b<br> expb=e<br>b<br> 10<br>m</p>
-<p> $\sin a \cos b \tan c \sec d \csc e \cot f$<br>\quad\sin a\quad\cos b\quad\tan c\quad\sec d\quad\csc e\quad\cot fsinacosbtancsecdcscecotf</p>
-<p> $\arcsin a \arccos b \arctan c$<br>\quad\arcsin a\quad\arccos b\quad\arctan carcsinaarccosbarctanc</p>
-<p> $\sinh a \cosh b \tanh c \coth d$<br>\quad\sinh a\quad\cosh b\quad\tanh c\quad\coth dsinhacoshbtanhccothd</p>
-<p> $\sh a \ch b \th c$<br>\quad\sh a\quad\ch b\quad\th cshachbthc</p>
-<p> $\operatorname{argsh} a \operatorname{argch} b \operatorname{argth} c$<br> ps:\operatorname{} 貌似可以将任何字符转换成标准函数的形式。<br>\quad\operatorname{argsh} a\quad\operatorname{argch} b\quad\operatorname{argth} cargshaargchbargthc</p>
-<p> $\left\vert a\right\vert \min(x,y) \max(x,y)$<br>\quad\left\vert a\right\vert\quad\min(x,y)\quad\max(x,y)∣a∣min(x,y)max(x,y)</p>
-<p>界限<br> $\min x \max y \inf s \sup t$<br>\quad\min x\quad\max y\quad\inf s\quad\sup tminxmaxyinfssupt</p>
-<p> $\lim u \liminf v \limsup w$<br>\quad\lim u\quad\liminf v\quad\limsup wlimuliminfvlimsupw</p>
-<p> $\dim p \deg q \det m \ker\phi$<br>\quad\dim p\quad\deg q\quad\det m\quad\ker\phidimpdegqdetmkerϕ</p>
-<p>投射<br>ps:ps: 感觉这翻译很奇怪，应该是映射吧。</p>
-<p> $\Pr j \hom l \lVert z\rVert \arg z$<br> ps:个人认为\lVert、\rVert与\Vert和|并没有什么区别。<br>\quad\Pr j\quad\hom l\quad\lVert z\rVert\quad\arg zPrjhoml∥z∥argz</p>
-<p>微分及导数<br> $dt \mathrm{d}t \partial t \nabla\psi$<br>\quad dt\quad\mathrm{d}t\quad\partial t\quad\nabla\psidtdt∂t∇ψ</p>
-<p> $\prime \backprime f^\prime f’ f’’ f^{(3)} \dot{y} \ddot{y}$<br>\quad\prime\quad\backprime\quad f^\prime\quad f’\quad f’’\quad f^{(3)}\quad\dot{y}\quad\ddot{y}′‵f<br>′<br> f<br>′<br> f<br>′′<br> f<br>(3)</p>
-<p>y<br>˙<br>​<br>y<br>¨<br>​     </p>
-<p>类字母符号及常数<br> $\infty \aleph \complement \backepsilon \eth \Finv \hbar$<br>\quad\infty\quad\aleph\quad\complement\quad\backepsilon\quad\eth\quad\Finv\quad\hbar∞ℵ∁∍ðℲℏ</p>
-<p> $\Im \imath \jmath \Bbbk \ell \mho \wp \Re \circledS$<br>\quad\Im\quad\imath\quad\jmath\quad\Bbbk\quad\ell\quad\mho\quad\wp\quad\Re\quad\circledSℑıȷkℓ℧℘ℜⓈ</p>
-<p>模算数<br> $a\equiv1\pmod{m}$<br>\quad a\equiv1\pmod{m}a≡1(modm)</p>
-<p> $a\bmod b$<br>\quad a\bmod bamodb</p>
-<p> $\gcd(m,n) \operatorname{lcm}(m,n)$<br>\quad\gcd(m,n)\quad\operatorname{lcm}(m,n)gcd(m,n)lcm(m,n)</p>
-<p> $\mid \nmid \shortmid \nshortmid$<br> ps：\mid可以用|代替。<br>\quad\mid\quad\nmid\quad\shortmid\quad\nshortmid∣∤∣</p>
-<p>for\ special:for special:</p>
-<p> $a\%b$<br>\quad a\%ba%b</p>
-<p>根号<br> $\surd \sqrt{2} \sqrt[n]{} \sqrt[n]{x}$<br>\quad\surd\quad\sqrt{2}\quad\sqrt[n]{}\quad\sqrt[n]{x}√<br>2<br>​<br>n</p>
-<p>​<br>n</p>
-<p>x<br>​     </p>
-<p>运算符<br> $+ - \pm \mp \dotplus$<br>\quad+\quad-\quad\pm\quad\mp\quad\dotplus+−±∓∔</p>
-<p> $\times \div \divideontimes / \backslash$<br>\quad\times\quad\div\quad\divideontimes\quad/\quad\backslash×÷⋇/\</p>
-<p> $\cdot <em> \star \circ \bullet$<br> ps:</em>可以用\ast代替。<br>\quad\cdot\quad*\quad\star\quad\circ\quad\bullet⋅∗⋆∘∙</p>
-<p> $\boxplus \boxminus \boxtimes \boxdot$<br>\quad\boxplus\quad\boxminus\quad\boxtimes\quad\boxdot⊞⊟⊠⊡</p>
-<p> $\oplus \ominus \otimes \oslash \odot$<br>\quad\oplus\quad\ominus\quad\otimes\quad\oslash\quad\odot⊕⊖⊗⊘⊙</p>
-<p> $\circleddash \circledcirc \circledast$<br>\quad\circleddash\quad\circledcirc\quad\circledast⊝⊚⊛</p>
-<p> $\bigoplus \bigotimes \bigodot$<br>\quad\bigoplus\quad\bigotimes\quad\bigodot⨁⨂⨀</p>
-<p>集合<br> ${ } \emptyset \varnothing$<br>\quad{\quad}\quad\emptyset\quad\varnothing{}∅∅</p>
-<p> $\in \notin \not\in \ni \not\ni$<br> ps:\not是在下一个字符上画斜杠。<br>\quad\in\quad\notin\quad\not\in\quad\ni\quad\not\ni∈∉̸∈∌∋</p>
-<p> $\cap \Cap \sqcap \bigcap$<br>\quad\cap\quad\Cap\quad\sqcap\quad\bigcap∩⋒⊓⋂</p>
-<p> $\cup \Cup \sqcup \bigcup \bigsqcup \uplus \biguplus$<br>\quad\cup\quad\Cup\quad\sqcup\quad\bigcup\quad\bigsqcup\quad\uplus\quad\biguplus∪⋓⊔⋃⨆⊎⨄</p>
-<p> $\setminus \smallsetminus \times$<br>\quad\setminus\quad\smallsetminus\quad\times∖∖×</p>
-<p> $\subset \Subset \sqsubset$<br>\quad\subset\quad\Subset\quad\sqsubset⊂⋐⊏</p>
-<p> $\supset \Supset \sqsupset$<br>\quad\supset\quad\Supset\quad\sqsupset⊃⋑⊐</p>
-<p> $\subseteq \nsubseteq \subsetneq \varsubsetneq \sqsubseteq$<br>\quad\subseteq\quad\nsubseteq\quad\subsetneq\quad\varsubsetneq\quad\sqsubseteq⊆⊈⊊⊑</p>
-<p> $\supseteq \nsupseteq \supsetneq \varsupsetneq \sqsupseteq$<br>\quad\supseteq\quad\nsupseteq\quad\supsetneq\quad\varsupsetneq\quad\sqsupseteq⊇⊉⊋⊒</p>
-<p> $\subseteqq \nsubseteqq \subsetneqq \varsubsetneqq$<br>\quad\subseteqq\quad\nsubseteqq\quad\subsetneqq\quad\varsubsetneqq⫅⫋</p>
-<p> $\supseteqq \nsupseteqq \supsetneqq \varsupsetneqq$<br>\quad\supseteqq\quad\nsupseteqq\quad\supsetneqq\quad\varsupsetneqq⫆⫌</p>
-<p>关系符号<br> $= \ne \neq \equiv \not\equiv$<br> ps:表示并没有看出来\ne和\neq的区别……<br>\quad=\quad\ne\quad\neq\quad\equiv\quad\not\equiv=≠≠≢≡</p>
-<p> $\doteq \doteqdot \overset{\underset{def}{}}{=} :=$<br>\quad\doteq\quad\doteqdot\quad\overset{\underset{def}{}}{=}\quad:=≐≑<br>=<br>def<br>​<br> :=</p>
-<p> $\sim \nsim \backsim \thicksim \simeq \backsimeq \eqsim \cong \ncong$<br>\quad\sim\quad\nsim\quad\backsim\quad\thicksim\quad\simeq\quad\backsimeq\quad\eqsim\quad\cong\quad\ncong∼≁∽∼≃⋍≂≅≆</p>
-<p> $\approx \thickapprox \approxeq \asymp \propto \varpropto$<br>\quad\approx\quad\thickapprox\quad\approxeq\quad\asymp\quad\propto\quad\varpropto≈≈≊≍∝∝</p>
-<p> $&lt; \nless \ll \not\ll \lll \not\lll \lessdot$<br>\quad&lt;\quad\nless\quad\ll\quad \not\ll\quad\lll\quad \not\lll\quad\lessdot&lt;≮≪̸≪⋘̸⋘⋖</p>
-<p> $&gt; \ngtr \gg \not\gg \ggg \not\ggg \gtrdot$<br>\quad&gt;\quad\ngtr\quad\gg\quad \not\gg\quad\ggg\quad \not\ggg\quad\gtrdot&gt;≯≫̸≫⋙̸⋙⋗</p>
-<p> $\le \leq \lneq \leqq \nleq \nleqq \lneqq \lvertneqq$<br>\quad\le\quad\leq\quad\lneq\quad\leqq\quad\nleq\quad\nleqq\quad\lneqq\quad\lvertneqq≤≤⪇≦≰≨</p>
-<p> $\ge \geq \gneq \geqq \ngeq \ngeqq \gneqq \gvertneqq$<br>\quad\ge\quad\geq\quad\gneq\quad\geqq\quad\ngeq\quad\ngeqq\quad\gneqq\quad\gvertneqq≥≥⪈≧≱≩</p>
-<p> $\lessgtr \lesseqgtr \lesseqqgtr \gtrless \gtreqless \gtreqqless$<br>\quad\lessgtr\quad\lesseqgtr\quad\lesseqqgtr\quad\gtrless\quad\gtreqless\quad\gtreqqless≶⋚⪋≷⋛⪌</p>
-<p> $\leqslant \nleqslant \eqslantless$<br>\quad\leqslant\quad\nleqslant\quad\eqslantless⩽⪕</p>
-<p> $\geqslant \ngeqslant \eqslantgtr$<br>\quad\geqslant\quad\ngeqslant\quad\eqslantgtr⩾⪖</p>
-<p> $\lesssim \lnsim \lessapprox \lnapprox$<br>\quad\lesssim\quad\lnsim\quad\lessapprox\quad\lnapprox≲⋦⪅⪉</p>
-<p> $\gtrsim \gnsim \gtrapprox \gnapprox$<br>\quad\gtrsim\quad\gnsim\quad\gtrapprox\quad\gnapprox≳⋧⪆⪊</p>
-<p> $\prec \nprec \preceq \npreceq \precneqq$<br>\quad\prec\quad\nprec\quad\preceq\quad\npreceq\quad\precneqq≺⊀⪯⋠⪵</p>
-<p> $\succ \nsucc \succeq \nsucceq \succneqq$<br>\quad\succ\quad\nsucc\quad\succeq\quad\nsucceq\quad\succneqq≻⊁⪰⋡⪶</p>
-<p> $\preccurlyeq \curlyeqprec$<br>\quad\preccurlyeq\quad\curlyeqprec≼⋞</p>
-<p> $\succcurlyeq \curlyeqsucc$<br>\quad\succcurlyeq\quad\curlyeqsucc≽⋟</p>
-<p> $\precsim \precnsim \precapprox \precnapprox$<br>\quad\precsim\quad\precnsim\quad\precapprox\quad\precnapprox≾⋨⪷⪹</p>
-<p> $\succsim \succnsim \succapprox \succnapprox$<br>\quad\succsim\quad\succnsim\quad\succapprox\quad\succnapprox≿⋩⪸⪺</p>
-<p>几何符号<br> $\parallel \nparallel \shortparallel \nshortparallel$<br> ps:\parallel应该和|是一样的。<br>\quad\parallel\quad\nparallel\quad\shortparallel\quad\nshortparallel∥∦∥</p>
-<p> $\perp \angle \sphericalangle \measuredangle 45^\circ$<br>\quad\perp\quad\angle\quad\sphericalangle\quad\measuredangle\quad45^\circ⊥∠∢∡45<br>∘</p>
-<p> $\Box \blacksquare \diamond \Diamond \lozenge \blacklozenge \bigstar$<br>\quad\Box\quad\blacksquare\quad\diamond\quad\Diamond\quad\lozenge\quad\blacklozenge\quad\bigstar□■⋄◊◊⧫★</p>
-<p> $\bigcirc \triangle \bigtriangleup \bigtriangledown$<br> ps:并没有看出\triangle和\bigtriangleup有什么区别。<br>\quad\bigcirc\quad\triangle\quad\bigtriangleup\quad\bigtriangledown◯△△▽</p>
-<p> $\vartriangle \triangledown \triangleleft \triangleright$<br>\quad\vartriangle\quad\triangledown\quad\triangleleft\quad\triangleright△▽◃▹</p>
-<p> $\blacktriangle \blacktriangledown \blacktriangleleft \blacktriangleright$<br>\quad\blacktriangle\quad\blacktriangledown\quad\blacktriangleleft\quad\blacktriangleright▲▼◀▶</p>
-<p>逻辑符号<br> $\forall \exists \nexists$<br>\quad\forall\quad\exists\quad\nexists∀∃∄</p>
-<p> $\therefore \because \And$<br> ps:\And也可用\&amp;，至少我没看出来这两个有什么差别。<br>\quad\therefore\quad\because\quad\And∴∵&amp;</p>
-<p> $\lor \vee \curlyvee \bigvee$<br>\quad\lor\quad\vee\quad\curlyvee\quad\bigvee∨∨⋎⋁</p>
-<p> $\land \wedge \curlywedge \bigwedge$<br>\quad\land\quad\wedge\quad\curlywedge\quad\bigwedge∧∧⋏⋀</p>
-<p> $\bar{q} \bar{abc} \overline{q} \overline{abc}$<br>\quad\bar{q}\quad\bar{abc}\quad\overline{q}\quad\overline{abc}<br>q<br>ˉ<br>​<br>abc<br>ˉ</p>
-<p>q<br>​<br>abc</p>
-<p> $\lnot \neg \bot \top$<br>\quad\lnot\quad\neg\quad\bot\quad\top¬¬⊥⊤</p>
-<p> $\vdash \dashv \vDash \Vdash \models$<br>\quad\vdash\quad\dashv\quad\vDash\quad\Vdash\quad\models⊢⊣⊨⊩⊨</p>
-<p> $\Vvdash \nvdash \nVdash \nvDash \nVDash$<br>\quad\Vvdash\quad\nvdash\quad\nVdash\quad\nvDash\quad\nVDash⊪⊬⊮⊭⊯</p>
-<p> $\ulcorner \urcorner \llcorner \lrcorner$<br>\quad\ulcorner\quad\urcorner\quad\llcorner\quad\lrcorner┌┐└┘</p>
-<p>箭头<br> $\Rrightarrow \Lleftarrow$<br>\quad\Rrightarrow\quad\Lleftarrow⇛⇚</p>
-<p> $\Rightarrow \nRightarrow \Longrightarrow \implies$<br>\quad\Rightarrow\quad\nRightarrow\quad\Longrightarrow\quad\implies⇒⇏⟹⟹</p>
-<p> $\Leftarrow \nLeftarrow \Longleftarrow$<br>\quad\Leftarrow\quad\nLeftarrow\quad\Longleftarrow⇐⇍⟸</p>
-<p> $\Leftrightarrow \nLeftrightarrow \Longleftrightarrow \iff$<br>\quad\Leftrightarrow\quad\nLeftrightarrow\quad\Longleftrightarrow\quad\iff⇔⇎⟺⟺</p>
-<p> $\Uparrow \Downarrow \Updownarrow$<br>\quad\Uparrow\quad\Downarrow\quad\Updownarrow⇑⇓⇕</p>
-<p> $\leftarrow \rightarrow \nleftarrow \nrightarrow \leftrightarrow \nleftrightarrow \longleftarrow \longrightarrow \longleftrightarrow$<br> ps:\leftarrow可用\gets代替，\rightarrow可用\to代替。<br>\quad\leftarrow\quad\rightarrow\quad\nleftarrow\quad\nrightarrow\quad\leftrightarrow\quad\nleftrightarrow\quad\longleftarrow\quad\longrightarrow\quad\longleftrightarrow←→↚↛↔↮⟵⟶⟷</p>
-<p> $\uparrow \downarrow \updownarrow \nearrow \searrow \nwarrow \swarrow$<br>\quad\uparrow\quad\downarrow\quad\updownarrow\quad\nearrow\quad\searrow\quad\nwarrow\quad\swarrow↑↓↕↗↘↖↙</p>
-<p> $\mapsto \longmapsto$<br>\quad\mapsto\quad\longmapsto↦⟼</p>
-<p> $\rightharpoonup \rightharpoondown \leftharpoonup \leftharpoondown \upharpoonleft \upharpoonright \downharpoonleft \downharpoonright \leftrightharpoons \rightleftharpoons$<br>\quad\rightharpoonup\quad\rightharpoondown\quad\leftharpoonup\quad\leftharpoondown\quad\upharpoonleft\quad\upharpoonright\quad\downharpoonleft\quad\downharpoonright\quad\leftrightharpoons\quad\rightleftharpoons⇀⇁↼↽↿↾⇃⇂⇋⇌</p>
-<p> $\curvearrowleft \circlearrowleft \Lsh \upuparrows \rightrightarrows \rightleftarrows \rightarrowtail \looparrowright$<br>\quad\curvearrowleft\quad\circlearrowleft\quad\Lsh\quad\upuparrows\quad\rightrightarrows\quad\rightleftarrows\quad\rightarrowtail\quad\looparrowright↶↺↰⇈⇉⇄↣↬</p>
-<p> $\curvearrowright \circlearrowright \Rsh \downdownarrows \leftleftarrows \leftrightarrows \leftarrowtail \looparrowleft$<br>\quad\curvearrowright\quad\circlearrowright\quad\Rsh\quad\downdownarrows\quad\leftleftarrows\quad\leftrightarrows\quad\leftarrowtail\quad\looparrowleft↷↻↱⇊⇇⇆↢↫</p>
-<p> $\hookrightarrow \hookleftarrow \multimap \leftrightsquigarrow \rightsquigarrow \twoheadrightarrow \twoheadleftarrow$<br>\quad\hookrightarrow\quad\hookleftarrow\quad\multimap\quad\leftrightsquigarrow\quad\rightsquigarrow\quad\twoheadrightarrow\quad\twoheadleftarrow↪↩⊸↭⇝↠↞</p>
-<p> $\xleftarrow{left} \xrightarrow{right} \xLeftarrow{Left} \xRightarrow{Right} \xleftrightarrow{left\&amp; right} \xLeftrightarrow{Left\&amp; Right}$<br>\quad\xleftarrow{left}\quad \xrightarrow{right} \quad \xLeftarrow{Left} \quad \xRightarrow{Right} \quad \xleftrightarrow{left\&amp; right} \quad \xLeftrightarrow{Left\&amp; Right}<br>left<br>​<br>right<br>​<br>Left<br>​<br>Right<br>​<br>left&amp;right<br>​<br>Left&amp;Right<br>​     </p>
-<p>特殊符号<br> $\amalg \% \dagger \ddagger \ldots \cdots$<br> ps:\dots和\ldots貌似是一样的。<br>\quad\amalg\quad\%\quad\dagger\quad\ddagger\quad\ldots\quad\cdots⨿%†‡…⋯</p>
-<p> $\smile \frown \wr$<br>\quad\smile\quad\frown\quad\wr⌣⌢≀</p>
-<p> $\diamondsuit \heartsuit \clubsuit \spadesuit \Game \flat \natural \sharp$<br>\quad\diamondsuit\quad\heartsuit\quad\clubsuit\quad\spadesuit\quad\Game\quad\flat\quad\natural\quad\sharp♢♡♣♠⅁♭♮♯</p>
-<p>以下是 WikiWiki 中没有分类的符号，我暂且将其归入特殊符号中</p>
-<p> $\diagup \diagdown \centerdot \ltimes \rtimes \leftthreetimes \rightthreetimes$<br>\quad\diagup\quad\diagdown\quad\centerdot\quad\ltimes\quad\rtimes\quad\leftthreetimes\quad\rightthreetimes╱╲⋅⋉⋊⋋⋌</p>
-<p> $\eqcirc \circeq \triangleq \bumpeq \Bumpeq \doteqdot \risingdotseq \fallingdotseq$<br>\quad\eqcirc\quad\circeq\quad\triangleq\quad\bumpeq\quad\Bumpeq\quad\doteqdot\quad\risingdotseq\quad\fallingdotseq≖≗≜≏≎≑≓≒</p>
-<p> $\intercal \barwedge \veebar \doublebarwedge \between \pitchfork$<br>\quad\intercal\quad\barwedge\quad\veebar\quad\doublebarwedge\quad\between\quad\pitchfork⊺⊼⊻⩞≬⋔</p>
-<p> $\vartriangleleft \ntriangleleft \vartriangleright \ntriangleright$<br>\quad\vartriangleleft\quad\ntriangleleft\quad\vartriangleright\quad\ntriangleright⊲⋪⊳⋫</p>
-<p> $\trianglelefteq \ntrianglelefteq \trianglerighteq \ntrianglerighteq$<br>\quad\trianglelefteq\quad\ntrianglelefteq\quad\trianglerighteq\quad\ntrianglerighteq⊴⋬⊵⋭</p>
-<p> $\LaTeX$ </p>
-<p> ps:应评论要求加上，其实介于阅读体验还是少用些。<br>\quad\LaTeXL<br>A<br> T<br>E<br>​     X</p>
-<p>上标、下标及积分等<br>上标<br> $a^2$<br>\quad a^2a<br>2</p>
-<p>下标<br> $a_2$<br>\quad a_2a<br>2<br>​     </p>
-<p>组合<br> $a^{2+2} a<em>{i,j}$<br>\quad a^{2+2}\quad a</em>{i,j}a<br>2+2<br> a<br>i,j<br>​     </p>
-<p>结合上下标<br> $a^2_2$<br>\quad a^2_2a<br>2<br>2<br>​     </p>
-<p>前置上下标<br> ${}^2_1!X^3_4$<br> ps:!的作用在下面空格一栏有讲述。<br>\quad {}^2_1!X^3_4<br>1<br>2<br>​     X<br>4<br>3<br>​     </p>
-<p>导数<br> $ (HTML)x’ (PNG)x^\prime (错误)x\prime$<br>\quad x’\quad x^\prime\quad x\primex<br>′<br> x<br>′<br> x′</p>
-<p>导数点<br> $\dot{x} \ddot{x}$<br>\quad\dot{x}\quad\ddot{x}<br>x<br>˙</p>
-<p>x<br>¨</p>
-<p>向量<br> $\vec{x} \overleftarrow{AB} \overrightarrow{AB} \widehat{AB}$<br>\quad\vec{a}\quad\overleftarrow{AB}\quad\overrightarrow{AB}\quad\widehat{AB}<br>a</p>
-<p>AB</p>
-<p>AB</p>
-<p>AB</p>
-<p>上弧<br> $\overset{\frown}{AB}$<br> ps:正确的语法应该是\overarc，但因为没有引入amsmath宏包，所以无法使用，只能用这个替代下。<br>\quad\overset{\frown}{AB}<br>AB<br>⌢</p>
-<p>上划线<br> $\overline{ABC}$<br>\quad\overline{ABC}<br>ABC</p>
-<p>下划线<br> $\underline{ABC}$<br>\quad\underline{ABC}<br>ABC<br>​     </p>
-<p>上括号<br> $\overbrace{1+2+\cdots+100}$   </p>
-<p> $\begin{matrix}5050\\overbrace{1+2+\cdots+100}\end{matrix}$<br> ps:’\‘是换行的意思。<br>\quad\overbrace{1+2+\cdots+100}<br>1+2+⋯+100<br>​     </p>
-<p>\quad\begin{matrix}5050\\overbrace{1+2+\cdots+100}\end{matrix}<br>5050<br>1+2+⋯+100<br>​<br>​     </p>
-<p>下括号<br> $\underbrace{1+2+\cdots+100}$   </p>
-<p> $\begin{matrix}\underbrace{1+2+\cdots+100}\5050\end{matrix}$<br>\quad\underbrace{1+2+\cdots+100}<br>1+2+⋯+100<br>​     </p>
-<p>\quad\begin{matrix}\underbrace{1+2+\cdots+100}\5050\end{matrix}<br>1+2+⋯+100<br>​<br>5050<br>​     </p>
-<p>求和<br> $\sum<em>{i=1}^na_i \sum\limits</em>{i=1}^na<em>i$<br>\quad\sum</em>{i=1}^na<em>i\quad\sum\limits</em>{i=1}^na_i∑<br>i=1<br>n<br>​     a<br>i<br>​<br>i=1<br>∑<br>n<br>​     a<br>i<br>​     </p>
-<p>求积<br> $\prod<em>{i=1}^na_i \prod\limits</em>{i=1}^na<em>i$<br>\quad\prod</em>{i=1}^na<em>i\quad\prod\limits</em>{i=1}^na_i∏<br>i=1<br>n<br>​     a<br>i<br>​<br>i=1<br>∏<br>n<br>​     a<br>i<br>​     </p>
-<p>上积<br> $\coprod<em>{i=1}^na_i \coprod\limits</em>{i=1}^na<em>i$<br>\quad\coprod</em>{i=1}^na<em>i\quad\coprod\limits</em>{i=1}^na_i∐<br>i=1<br>n<br>​     a<br>i<br>​<br>i=1<br>∐<br>n<br>​     a<br>i<br>​     </p>
-<p>极限<br> $\lim<em>{n\to\infty}x_n \lim\limits</em>{n\to\infty}x<em>n$<br>\quad\lim</em>{n\to\infty}x<em>n\quad\lim\limits</em>{n\to\infty}x_nlim<br>n→∞<br>​     x<br>n<br>​<br>n→∞<br>lim<br>​     x<br>n<br>​     </p>
-<p>积分<br> $\int<em>{-N}^{N}e^x\,dx$<br> ps:\,的作用在下面空格一栏有讲。<br>\quad\int</em>{-N}^{N}e^x\,dx∫<br>−N<br>N<br>​     e<br>x<br> dx</p>
-<p>双重积分<br> $\iint_M^Ndx\,dy$<br>\quad\iint_M^Ndx\,dy∬<br>M<br>N<br>​     dxdy</p>
-<p>三重积分<br> $\iiint_M^Ndx\,dy\,dz$<br>\quad\iiint_M^Ndx\,dy\,dz∭<br>M<br>N<br>​     dxdydz</p>
-<p>闭合的曲线、曲面积分<br> $\oint_Cx^3\,dx+4y^2\,dy$<br>\quad\oint_Cx^3\,dx+4y^2\,dy∮<br>C<br>​     x<br>3<br> dx+4y<br>2<br> dy</p>
-<p>交集<br> $\bigcap_1^np \bigcap\limits_1^np$<br>\quad\bigcap_1^np\quad\bigcap\limits_1^np⋂<br>1<br>n<br>​     p<br>1<br>⋂<br>n<br>​     p</p>
-<p>并集<br> $\bigcup_1^np \bigcup\limits_1^np$<br>\quad\bigcup_1^np\quad\bigcup\limits_1^np⋃<br>1<br>n<br>​     p<br>1<br>⋃<br>n<br>​     p</p>
-<p>分数、矩阵等<br>分数<br> $\frac{1}{2}=0.5$<br>\quad\frac{1}{2}=0.5<br>2<br>1<br>​     =0.5</p>
-<p>小型分数<br> $\tfrac{1}{2}=0.5$<br> ps:并不清楚为什么洛谷的LaTeX里普通分数和小型分数一样大……<br>\quad\tfrac{1}{2}=0.5<br>2<br>1<br>​     =0.5</p>
-<p>大型分数<br> $\dfrac{1}{2}=0.5 \dfrac{1}{x+\dfrac{3}{y+\dfrac{1}{5}}}$<br>\quad\dfrac{1}{2}=0.5\qquad\dfrac{1}{x+\dfrac{3}{y+\dfrac{1}{5}}}<br>2<br>1<br>​     =0.5<br>x+<br>y+<br>5<br>1<br>​<br>3<br>​<br>1<br>​     </p>
-<p>二项式系数<br> $\dbinom{n}{m}=\dbinom{n}{n-m}=C_n^m=C_n^{n-m}$<br>\quad\dbinom{n}{m}=\dbinom{n}{n-m}=C_n^m=C_n^{n-m}(<br>m<br>n<br>​     )=(<br>n−m<br>n<br>​     )=C<br>n<br>m<br>​     =C<br>n<br>n−m<br>​     </p>
-<p>小型二项式系数<br> $\tbinom{n}{m}=\tbinom{n}{n-m}=C_n^m=C_n^{n-m}$<br>\quad\tbinom{n}{m}=\tbinom{n}{n-m}=C_n^m=C_n^{n-m}(<br>m<br>n<br>​     )=(<br>n−m<br>n<br>​     )=C<br>n<br>m<br>​     =C<br>n<br>n−m<br>​     </p>
-<p> $\binom{n}{m}=\binom{n}{n-m}=C_n^m=C_n^{n-m}$<br>\quad\binom{n}{m}=\binom{n}{n-m}=C_n^m=C_n^{n-m}(<br>m<br>n<br>​     )=(<br>n−m<br>n<br>​     )=C<br>n<br>m<br>​     =C<br>n<br>n−m<br>​     </p>
-<p>矩阵<br> $\begin{matrix}a&amp;b\c&amp;d\end{matrix}$<br> ps:&amp;是使上下行对齐。<br>\quad\begin{matrix}a&amp;b\c&amp;d\end{matrix}<br>a<br>c<br>​<br>b<br>d<br>​     </p>
-<p> $\begin{vmatrix}a&amp;b\c&amp;d\end{vmatrix}$<br>\quad\begin{vmatrix}a&amp;b\c&amp;d\end{vmatrix}<br>∣<br>∣<br>∣<br>∣<br>​<br>a<br>c<br>​<br>b<br>d<br>​<br>∣<br>∣<br>∣<br>∣<br>​     </p>
-<p> $\begin{Vmatrix}a&amp;b\c&amp;d\end{Vmatrix}$<br>\quad\begin{Vmatrix}a&amp;b\c&amp;d\end{Vmatrix}<br>∥<br>∥<br>∥<br>∥<br>​<br>a<br>c<br>​<br>b<br>d<br>​<br>∥<br>∥<br>∥<br>∥<br>​     </p>
-<p> $\begin{bmatrix}a&amp;\cdots&amp;b\\vdots&amp;\ddots&amp;\vdots\c&amp;\cdots&amp;d\end{bmatrix}$<br> ps:\vdots是竖着3个点，\ddots是斜着3个点。<br>\quad\begin{bmatrix}a&amp;\cdots&amp;b\\vdots&amp;\ddots&amp;\vdots\c&amp;\cdots&amp;d\end{bmatrix}<br>⎣<br>⎡<br>​<br>a<br>⋮<br>c<br>​<br>⋯<br>⋱<br>⋯<br>​<br>b<br>⋮<br>d<br>​<br>⎦<br>⎤<br>​     </p>
-<p> $\begin{Bmatrix}a&amp;c\b&amp;d\end{Bmatrix}$<br>\quad\begin{Bmatrix}a&amp;c\b&amp;d\end{Bmatrix}{<br>a<br>b<br>​<br>c<br>d<br>​     }</p>
-<p> $\begin{pmatrix}a&amp;c\b&amp;d\end{pmatrix}$<br>\quad\begin{pmatrix}a&amp;c\b&amp;d\end{pmatrix}(<br>a<br>b<br>​<br>c<br>d<br>​     )</p>
-<p>矩阵嵌套<br> $\begin{vmatrix} \begin{Bmatrix}A &amp; \ c &amp; d \end{Bmatrix} &amp; x\ \dfrac{1}{2} &amp; \begin{matrix} 1 &amp; 2 \ 3 &amp; 4 \end{matrix} \end{vmatrix}$<br>\quad \begin{vmatrix} \begin{Bmatrix}A &amp; \ c &amp; d \end{Bmatrix} &amp; x\ \dfrac{1}{2} &amp; \begin{matrix} 1 &amp; 2 \ 3 &amp; 4 \end{matrix} \end{vmatrix}<br>∣<br>∣<br>∣<br>∣<br>∣<br>∣<br>∣<br>∣<br>​<br>{<br>A<br>c<br>​<br>d<br>​     }<br>2<br>1<br>​<br>​<br>x<br>1<br>3<br>​<br>2<br>4<br>​<br>​<br>∣<br>∣<br>∣<br>∣<br>∣<br>∣<br>∣<br>∣<br>​     </p>
-<p>条件定义(如分段函数)<br> $f(x)=\begin{cases}x-1&amp;x\leqslant3\x^2+3x-1&amp;x&gt;3\end{cases}$<br>\quad f(x)=\begin{cases}x-1&amp;x\leqslant3\x^2+3x-1&amp;x&gt;3\end{cases}f(x)={<br>x−1<br>x<br>2<br> +3x−1<br>​<br>x⩽3<br>x&gt;3<br>​     </p>
-<p>方程组<br> $\begin{cases}2x+9y-5z=10\4x+20y+z=24\x-\dfrac{1}{2}y+3z=8\end{cases}$<br>\quad\begin{cases}2x+9y-5z=10\4x+20y+z=24\x-\dfrac{1}{2}y+3z=8\end{cases}<br>⎩<br>⎪<br>⎪<br>⎨<br>⎪<br>⎪<br>⎧<br>​<br>2x+9y−5z=10<br>4x+20y+z=24<br>x−<br>2<br>1<br>​     y+3z=8<br>​     </p>
-<p>多行等式<br> $\begin{aligned}f(x) &amp; = (x + 1)^2 \ &amp; = x^2 + 2x + 1\end{aligned}$ </p>
-<p> $\begin{aligned}a_1 &amp; = 1 \ a_2 &amp; = 2 \ &amp; \dots \ a_n &amp; = n\end{aligned}$  </p>
-<p> ps:原语法为align，现在是aligned。<br>\quad\begin{aligned}f(x) &amp; = (x + 1)^2 \ &amp; = x^2 + 2x + 1\end{aligned}\qquad\begin{aligned}a_1 &amp; = 1 \ a_2 &amp; = 2 \ &amp; \dots \ a_n &amp; = n\end{aligned}<br>f(x)<br>​<br>=(x+1)<br>2</p>
-<p>=x<br>2<br> +2x+1<br>​<br>a<br>1<br>​<br>a<br>2<br>​<br>a<br>n<br>​<br>​<br>=1<br>=2<br>…<br>=n<br>​     </p>
-<p>数组/表格<br> $\begin{array}{|c|c||c|}x&amp;y&amp;z\8&amp;2&amp;4\2&amp;3&amp;9\10&amp;\dfrac{3}{4}&amp;\sqrt{3}\a&amp;b&amp;c\end{array}$<br> ps:\begin{array}{}←这个大括号里是形如’|c|c||c|’这样的格式，’|’是两列的分割线，’c’是表示这里有一列，而内容中使用’&amp;’来分开每一列的内容。这里可能讲的不是很清楚，所以最好还是自己尝试一下。<br>\quad\begin{array}{|c|c||c|}x&amp;y&amp;z\8&amp;2&amp;4\2&amp;3&amp;9\10&amp;\dfrac{3}{4}&amp;\sqrt{3}\a&amp;b&amp;c\end{array}<br>x<br>8<br>2<br>10<br>a<br>​<br>y<br>2<br>3<br>4<br>3<br>​<br>b<br>​<br>z<br>4<br>9<br>3<br>​<br>c<br>​     </p>
-<p>字体<br>希腊字母<br>貌似洛谷对一些希腊字母不支持，也许是因为像英文字母，所以我这里只好用英文字母代替了。</p>
-<p> $A B\Gamma\Delta EZH\Theta$<br>\quad A B\Gamma\Delta EZH\ThetaABΓΔEZHΘ</p>
-<p> $IK\Lambda MN\Xi O\Pi$<br>\quad IK\Lambda MN\Xi O\PiIKΛMNΞOΠ</p>
-<p> $P\Sigma T\Upsilon\Phi X\Psi\Omega$<br>\quad P\Sigma T\Upsilon\Phi X\Psi\OmegaPΣTΥΦXΨΩ</p>
-<p> $\alpha\beta\gamma\delta\epsilon\zeta\eta\theta$<br>\quad\alpha\beta\gamma\delta\epsilon\zeta\eta\thetaαβγδϵζηθ</p>
-<p> $\iota\kappa\lambda\mu\nu\xi\omicron\pi$<br>\quad\iota\kappa\lambda\mu\nu\xi\omicron\piικλμνξοπ</p>
-<p> $\rho\sigma\tau\upsilon\phi\chi\psi\omega$<br>\quad\rho\sigma\tau\upsilon\phi\chi\psi\omegaρστυϕχψω</p>
-<p> $\varepsilon\digamma\varkappa\varpi$<br>\quad\varepsilon\digamma\varkappa\varpiεϝϰϖ</p>
-<p> $\varrho\varsigma\vartheta\varphi$<br>\quad\varrho\varsigma\vartheta\varphiϱςϑφ</p>
-<p>希伯来符号<br> $\aleph\beth\gimel\daleth$<br>\quad\aleph\beth\gimel\dalethℵℶℷℸ</p>
-<p>黑板粗体<br> $\mathbb{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$<br> ps:仅支持大写英文字母。<br>\quad\mathbb{ABCDEFGHIJKLMNOPQRSTUVWXYZ}ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
-<p>粗体<br> $\mathbf{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$<br> $\mathbf{abcdefghijklmnopqrstuvwxyz}$<br> $\mathbf{0123456789}$<br> ps:支持大小写英文字母、数字和大写希腊字母。<br>\quad\mathbf{ABCDEFGHIJKLMNOPQRSTUVWXYZ}ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>\quad\mathbf{abcdefghijklmnopqrstuvwxyz}abcdefghijklmnopqrstuvwxyz<br>\quad\mathbf{A B\Gamma\Delta EZH\Theta}ABΓΔEZHΘ<br>\quad\mathbf{IK\Lambda MN\Xi O\Pi}IKΛMNΞOΠ<br>\quad\mathbf{P\Sigma T\Upsilon\Phi X\Psi\Omega}PΣTΥΦXΨΩ<br>\quad\mathbf{0123456789}0123456789</p>
-<p>斜体(英文字母和小写希腊字母默认)<br> $\mathit{A B\Gamma\Delta EZH\Theta}$<br> $\mathit{IK\Lambda MN\Xi O\Pi}$<br> $\mathit{P\Sigma T\Upsilon\Phi X\Psi\Omega}$<br> $\mathit{0123456789}$<br>\quad\mathit{A B\Gamma\Delta EZH\Theta}ABΓΔEZHΘ<br>\quad\mathit{IK\Lambda MN\Xi O\Pi}IKΛMNΞOΠ<br>\quad\mathit{P\Sigma T\Upsilon\Phi X\Psi\Omega}PΣTΥΦXΨΩ<br>\quad\mathit{0123456789}0123456789</p>
-<p>罗马体<br> $\mathrm{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$<br> $\mathrm{abcdefghijklmnopqrstuvwxyz}$<br> $\mathrm{0123456789}$<br> ps:支持大小写英文字母和数字。<br>\quad\mathrm{ABCDEFGHIJKLMNOPQRSTUVWXYZ}ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>\quad\mathrm{abcdefghijklmnopqrstuvwxyz}abcdefghijklmnopqrstuvwxyz<br>\quad\mathrm{0123456789}0123456789</p>
-<p>打字机字体<br> $\mathtt{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$<br> $\mathtt{abcdefghijklmnopqrstuvwxyz}$<br> $\mathtt{A B\Gamma\Delta EZH\Theta}$<br> $\mathtt{IK\Lambda MN\Xi O\Pi}$<br> $\mathtt{P\Sigma T\Upsilon\Phi X\Psi\Omega}$<br> $\mathtt{0123456789}$<br> ps:支持大小写英文字母、大写希腊字母和数字。<br>\quad \mathtt{ABCDEFGHIJKLMNOPQRSTUVWXYZ}ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>\quad \mathtt{abcdefghijklmnopqrstuvwxyz}abcdefghijklmnopqrstuvwxyz<br>\quad \mathtt{A B\Gamma\Delta EZH\Theta}ABΓΔEZHΘ<br>\quad \mathtt{IK\Lambda MN\Xi O\Pi}IKΛMNΞOΠ<br>\quad \mathtt{P\Sigma T\Upsilon\Phi X\Psi\Omega}PΣTΥΦXΨΩ<br>\quad \mathtt{0123456789}0123456789</p>
-<p>无衬线体<br> $\mathsf{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$<br> $\mathsf{abcdefghijklmnopqrstuvwxyz}$<br> $\mathsf{A B\Gamma\Delta EZH\Theta}$<br> $\mathsf{IK\Lambda MN\Xi O\Pi}$<br> $\mathsf{P\Sigma T\Upsilon\Phi X\Psi\Omega}$<br> $\mathsf{0123456789}$<br> ps:支持大小写英文字母、大写希腊字母和数字。<br>\quad\mathsf{ABCDEFGHIJKLMNOPQRSTUVWXYZ}ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>\quad\mathsf{abcdefghijklmnopqrstuvwxyz}abcdefghijklmnopqrstuvwxyz<br>\quad\mathsf{A B\Gamma\Delta EZH\Theta}ABΓΔEZHΘ<br>\quad\mathsf{IK\Lambda MN\Xi O\Pi}IKΛMNΞOΠ<br>\quad\mathsf{P\Sigma T\Upsilon\Phi X\Psi\Omega}PΣTΥΦXΨΩ<br>\quad\mathsf{0123456789}0123456789</p>
-<p>手写体/花体<br> $\mathcal{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$<br> $\mathcal{0123456789}$<br> ps:支持大写英文字母和数字。<br>\quad\mathcal{ABCDEFGHIJKLMNOPQRSTUVWXYZ}ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>\quad\mathcal{0123456789}0123456789</p>
-<p>FrakturFraktur 体<br> $\mathfrak{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$<br> $\mathfrak{abcdefghijklmnopqrstuvwxyz}$<br> $\mathfrak{0123456789}$<br> ps:支持大小写英文字母和数字。<br>\quad\mathfrak{ABCDEFGHIJKLMNOPQRSTUVWXYZ}ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>\quad\mathfrak{abcdefghijklmnopqrstuvwxyz}abcdefghijklmnopqrstuvwxyz<br>\quad\mathfrak{0123456789}0123456789</p>
-<p>小型非斜体字<br> $\scriptstyle\text{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$<br> $\scriptstyle\text{abcdefghijklmnopqrstuvwxyz}$<br> $\scriptstyle\text{0123456789}$<br> ps:支持大小写英文字母和数字，\text见下一栏。<br>\quad\scriptstyle\text{ABCDEFGHIJKLMNOPQRSTUVWXYZ}ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>\quad\scriptstyle\text{abcdefghijklmnopqrstuvwxyz}abcdefghijklmnopqrstuvwxyz<br>\quad\scriptstyle\text{0123456789}0123456789</p>
-<p>混合字体<br>斜体字符<br> $x y z$<br> ps:忽略公式源码中的空格，要强制空格的看下面空格一栏。<br>\quad x y zxyz</p>
-<p>非斜体字符<br> $\text{x y z} \text{中文}$<br> ps:不会忽略空格，支持大小写英文字母和数字，以及中文。<br>\quad\text{x y z}\quad\text{中文}x y z中文</p>
-<p>混合斜体与非斜体<br> $\text{if }n\text{ is even}$<br> ps:注意在\text中使用空格来显得更好看，或者可以用强制空格代替。<br>\quad\text{if }n\text{ is even}if n is even</p>
-<p>括号<br>普通括号<br> $(\dfrac{1}{2}) (\dfrac{1}{x+\dfrac{2}{3}})$<br> ps:对于较大的式子显得比较难看。<br>\quad(\dfrac{1}{2})\qquad(\dfrac{1}{x+\dfrac{2}{3}})(<br>2<br>1<br>​     )(<br>x+<br>3<br>2<br>​<br>1<br>​     )</p>
-<p>根据式子大小匹配的括号<br> $\left(\dfrac{1}{2}\right) \left(\dfrac{1}{x+\dfrac{2}{3}}\right)$<br>\quad\left(\dfrac{1}{2}\right)\qquad\left(\dfrac{1}{x+\dfrac{2}{3}}\right)(<br>2<br>1<br>​     )<br>⎝<br>⎜<br>⎛<br>​<br>x+<br>3<br>2<br>​<br>1<br>​<br>⎠<br>⎟<br>⎞<br>​<br>此功能 (( 使用\left和\right )) 可以推广到不同的括号：</p>
-<p>圆括号/小括号<br> $\left(\dfrac{1}{2}\right)$<br>\quad\left(\dfrac{1}{2}\right)(<br>2<br>1<br>​     )</p>
-<p>方括号/中括号<br> $\left[\dfrac{1}{2}\right]$<br>\quad\left[\dfrac{1}{2}\right][<br>2<br>1<br>​     ]</p>
-<p>花括号/大括号<br> $\left{\dfrac{1}{2}\right}$<br> ps:注意大括号要用{和}。<br>\quad\left{\dfrac{1}{2}\right}{<br>2<br>1<br>​     }</p>
-<p>角括号<br> $\left\langle\dfrac{1}{2}\right\rangle$<br> ps:\langle可以用&lt;，\rangle可以用&gt;。<br>\quad\left\langle\dfrac{1}{2}\right\rangle⟨<br>2<br>1<br>​     ⟩</p>
-<p>单竖线/绝对值<br> $\left|\dfrac{1}{2}\right|$<br>\quad\left|\dfrac{1}{2}\right|<br>∣<br>∣<br>∣<br>∣<br>​<br>2<br>1<br>​<br>∣<br>∣<br>∣<br>∣<br>​     </p>
-<p>双竖线<br> $\left|\dfrac{1}{2}\right|$<br>\quad\left|\dfrac{1}{2}\right|<br>∥<br>∥<br>∥<br>∥<br>​<br>2<br>1<br>​<br>∥<br>∥<br>∥<br>∥<br>​     </p>
-<p>向下取整<br> $\left\lfloor\dfrac{1}{2}\right\rfloor$<br>\quad\left\lfloor\dfrac{1}{2}\right\rfloor⌊<br>2<br>1<br>​     ⌋</p>
-<p>向上取整<br> $\left\lceil\dfrac{1}{2}\right\rceil$<br>\quad\left\lceil\dfrac{1}{2}\right\rceil⌈<br>2<br>1<br>​     ⌉</p>
-<p>斜线<br> $\left/\dfrac{1}{2}\right/$<br>\quad\left/\dfrac{1}{2}\right//<br>2<br>1<br>​     /</p>
-<p>反斜线<br> $\left\backslash\dfrac{1}{2}\right\backslash$<br>\quad\left\backslash\dfrac{1}{2}\right\backslash\<br>2<br>1<br>​     \</p>
-<p>上下箭头<br> $\left\uparrow\dfrac{1}{2}\right\uparrow$<br>\quad\left\uparrow\dfrac{1}{2}\right\uparrow<br>⏐<br>⏐<br>⏐<br>↑<br>​<br>2<br>1<br>​<br>⏐<br>⏐<br>⏐<br>↑<br>​     </p>
-<p> $\left\Downarrow\dfrac{1}{2}\right\Downarrow$<br>\quad\left\Downarrow\dfrac{1}{2}\right\Downarrow<br>⇓<br>‖<br>‖<br>‖<br>​<br>2<br>1<br>​<br>⇓<br>‖<br>‖<br>‖<br>​     </p>
-<p> $\left\updownarrow\dfrac{1}{2}\right\updownarrow$<br>\quad\left\updownarrow\dfrac{1}{2}\right\updownarrow<br>↓<br>⏐<br>⏐<br>↑<br>​<br>2<br>1<br>​<br>↓<br>⏐<br>⏐<br>↑<br>​<br>因为上下箭头太多了，这里就不一一示范了（其实是我懒。</p>
-<p>混合括号<br>其实上述括号都可以混合使用，这里就随便列两个了。</p>
-<p> $\left&lt;\dfrac{1}{2}\right/$<br>\quad\left&lt;\dfrac{1}{2}\right/⟨<br>2<br>1<br>​     /</p>
-<p> $\left(\dfrac{1}{2},1\right]$<br>\quad\left(\dfrac{1}{2},1\right](<br>2<br>1<br>​     ,1]</p>
-<p>单左括号<br>上述括号都适用，这里就随便列一个。</p>
-<p> $\left(\dfrac{1}{2}\right.$<br>\quad\left(\dfrac{1}{2}\right.(<br>2<br>1<br>​     </p>
-<p>单右括号<br>同上。</p>
-<p> $\left.\dfrac{1}{2}\right]$<br>\quad\left.\dfrac{1}{2}\right]<br>2<br>1<br>​     ]</p>
-<p>强制括号大小<br> $\Bigg(\bigg[\Big{\big<x\big>\Big}\bigg]\Bigg)$<br> ps:即使用\Bigg、\bigg、\Big、\big来控制括号大小。<br>\quad\Bigg(\bigg[\Big{\big<x\big>\Big}\bigg]\Bigg)([{⟨x⟩}])</p>
-<p>空格<br>一般 LaTeXLaTeX 能自动处理大多数空格，但必要时候需要强制控制大小。</p>
-<p>紧贴<br> $x!y$<br>\quad x!yxy<br>宽度为 -\frac{m}{6}−<br>6<br>m<br>​     </p>
-<p>无空格<br> $xy$<br>\quad xyxy<br>宽度为 00</p>
-<p>小空格<br> $x\,y$<br>\quad x\,yxy<br>宽度为 \frac{m}{6}<br>6<br>m<br>​     </p>
-<p>中等空格<br> $x\;y$<br>\quad x\;yxy<br>宽度为 \frac{2m}{7}<br>7<br>2m<br>​     </p>
-<p>大空格<br> $x\ y$<br>\quad x\ yx y<br>宽度为 \frac{m}{3}<br>3<br>m<br>​     </p>
-<p>quadquad 空格<br> $x\quad y$<br>\quad x\quad yxy<br>宽度为 mm</p>
-<p>两个 quadquad 空格<br> $x\qquad y$<br>\quad x\qquad yxy<br>宽度为 2m2m</p>
-<p>颜色<br>语法<br>字体颜色：{\color{色调}表达式}<br>背景颜色：{\color{文字色调}\colorbox{背景色调}{表达式(可以打中文)}}</p>
-<p>洛谷内支持的颜色(洛谷里有挺多颜色是不支持的，而且有些颜色和 WikiWiki 上不太一样……)<br>{\color{Aquamarine}Aquamarine}Aquamarine<br>{\color{Black}Black}Black<br>{\color{Blue}Blue}Blue<br>{\color{BlueViolet}BlueViolet}BlueViolet<br>{\color{Brown}Brown}Brown<br>{\color{CadetBlue}CadetBlue}CadetBlue<br>{\color{CornflowerBlue}CornflowerBlue}CornflowerBlue<br>{\color{Cyan}Cyan}Cyan<br>{\color{DarkOrchid}DarkOrchid}DarkOrchid<br>{\color{ForestGreen}ForestGreen}ForestGreen<br>{\color{Fuchsia}Fuchsia}Fuchsia<br>{\color{Goldenrod}Goldenrod}Goldenrod<br>{\color{Gold}Gold}Gold<br>{\color{Gray}Gray}Gray<br>{\color{CadetBlue}CadetBlue}CadetBlue<br>{\color{Green}Green}Green<br>{\color{GreenYellow}GreenYellow}GreenYellow<br>{\color{Lavender}Lavender}Lavender<br>{\color{LimeGreen}LimeGreen}LimeGreen<br>{\color{Magenta}Magenta}Magenta<br>{\color{Maroon}Maroon}Maroon<br>{\color{Orange}Orange}Orange<br>{\color{OrangeRed}OrangeRed}OrangeRed<br>{\color{Orchid}Orchid}Orchid<br>{\color{Plum}Plum}Plum<br>{\color{Purple}Purple}Purple<br>{\color{Red}Red}Red<br>{\color{RoyalBlue}RoyalBlue}RoyalBlue<br>{\color{Salmon}Salmon}Salmon<br>{\color{SeaGreen}SeaGreen}SeaGreen<br>{\color{SkyBlue}SkyBlue}SkyBlue<br>{\color{SpringGreen}SpringGreen}SpringGreen<br>{\color{Tan}Tan}Tan<br>{\color{Thistle}Thistle}Thistle<br>{\color{Turquoise}Turquoise }Turquoise<br>{\color{Violet}Violet}Violet<br>{\color{White}White}\getsWhite← 这是白= =<br>{\color{Yellow}Yellow}Yellow<br>{\color{YellowGreen}YellowGreen}YellowGreen<br>随便举个例子：</p>
-<p> $x=\dfrac{-b\pm\sqrt{\color{Red}b^2-4ac}}{\color{Blue}2a}$<br>\quad x=\dfrac{-b\pm\sqrt{\color{Red}b^2-4ac}}{\color{Blue}2a}x=<br>2a<br>−b±<br>b<br>2<br> −4ac<br>​<br>​     </p>
-<p> $\color{Blue}\colorbox{Yellow}{LaTeX公式大全}$<br>\quad\color{Blue}\colorbox{Yellow}{LaTeX公式大全}<br>LaTeX公式大全<br>​     </p>
-<p>把数学公式框起来</p>
-<script type="math/tex; mode=display">\boxed{\sum\limits_{i = 1}^{n} i = \dfrac{n(n - 1)}{2}}</script><p> ps:对于行内模式同样有效，不过大多情况用于独立模式。<br>\boxed{\sum\limits_{i = 1}^{n} i = \dfrac{n(n - 1)}{2}}<br>i=1<br>∑<br>n<br>​     i=<br>2<br>n(n−1)<br>​<br>​     </p>
-<p>EndEnd<br>历时快半个月了，终究还是断断续续完成了，中间一次大改是真的伤，不过自己开的坑总要填完啊。不过因为纯手打的关系，总会有些小错误，如果有还请在评论区留言，谢谢！</p>
-
+        <h1><b>转载自【<a href="https://www.luogu.com.cn/blog/IowaBattleship/latex-gong-shi-tai-quan" target="_blank" rel="noopener">https://www.luogu.com.cn/blog/IowaBattleship/latex-gong-shi-tai-quan</a>】</b></h1>
       
     </div>
     
@@ -678,8 +450,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -780,6 +561,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">转载自【https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;blog&#x2F;IowaBattleship&#x2F;latex-gong-shi-tai-quan】</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -807,7 +604,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">8.6k</span>
+    <span title="Site words total count">3k</span>
   
 </div>
 
