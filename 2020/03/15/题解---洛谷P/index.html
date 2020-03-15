@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/20191124153350.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/20191124153350.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/20191124153350.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="blog, diary" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="题外话我**(手动屏蔽)，这道题我用了 $3$ 天才完全$\color{green}{AC}$  原题链接洛谷 题目简述$2 \times N$ 名编号为 $1\sim 2N$ 的选手共进行 $R$ 轮比赛。每轮比赛开始前，以及所有比赛结束后，都会按照总分从高到低对选手进行一次排名。选手的总分为第一轮开始前的初始分数加上已参加过的所有比赛的得分和。总分相同的，约定编号较小的选手排名靠前。 每轮比赛">
+<meta property="og:type" content="article">
+<meta property="og:title" content="题解 - 洛谷P1309【瑞士轮】">
+<meta property="og:url" content="http://guiguxiaowa.github.io/2020/03/15/%E9%A2%98%E8%A7%A3---%E6%B4%9B%E8%B0%B7P/index.html">
+<meta property="og:site_name" content="小蛙博客">
+<meta property="og:description" content="题外话我**(手动屏蔽)，这道题我用了 $3$ 天才完全$\color{green}{AC}$  原题链接洛谷 题目简述$2 \times N$ 名编号为 $1\sim 2N$ 的选手共进行 $R$ 轮比赛。每轮比赛开始前，以及所有比赛结束后，都会按照总分从高到低对选手进行一次排名。选手的总分为第一轮开始前的初始分数加上已参加过的所有比赛的得分和。总分相同的，约定编号较小的选手排名靠前。 每轮比赛">
+<meta property="og:image" content="https://s1.ax1x.com/2020/03/15/83fUEQ.png">
+<meta property="article:published_time" content="2020-03-15T09:00:02.000Z">
+<meta property="article:modified_time" content="2020-03-15T09:34:59.172Z">
+<meta property="article:author" content="littlefrog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/03/15/83fUEQ.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://guiguxiaowa.github.io/2020/03/15/题解---洛谷P/"/>
+
+
+
+
+
+  <title>题解 - 洛谷P1309【瑞士轮】 | 小蛙博客</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小蛙博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">苔花如米小，也学牡丹开。</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-返回主页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            返回主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于博主">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于博主
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-文章归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            文章归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://guiguxiaowa.github.io/2020/03/15/%E9%A2%98%E8%A7%A3---%E6%B4%9B%E8%B0%B7P/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="littlefrog">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/20191124153350.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小蛙博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">题解 - 洛谷P1309【瑞士轮】</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-15T17:00:02+08:00">
+                2020-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><p>我**(手动屏蔽)，这道题我用了 $3$ 天才完全$\color{green}{AC}$ </p>
+<h2 id="原题链接"><a href="#原题链接" class="headerlink" title="原题链接"></a>原题链接</h2><p><a href="https://www.luogu.com.cn/problem/P1309" target="_blank" rel="noopener">洛谷</a></p>
+<h2 id="题目简述"><a href="#题目简述" class="headerlink" title="题目简述"></a>题目简述</h2><p>$2 \times N$ 名编号为 $1\sim 2N$ 的选手共进行 $R$ 轮比赛。每轮比赛开始前，以及所有比赛结束后，都会按照总分从高到低对选手进行一次排名。选手的总分为第一轮开始前的初始分数加上已参加过的所有比赛的得分和。总分相同的，约定编号较小的选手排名靠前。</p>
+<p>每轮比赛的对阵安排与该轮比赛开始前的排名有关：第 $1$ 名和第 $2$ 名、第 $3$ 名和第 $4$ 名、……、第 $2K - 1$ 名和第 $2K$ 名、…… 、第 $2N - 1$ 名和第 $2N$ 名，各进行一场比赛。每场比赛胜者得 $1 $ 分，负者得 $0$ 分。也就是说除了首轮以外，其它轮比赛的安排均不能事先确定，而是要取决于选手在之前比赛中的表现。</p>
+<p>现给定每个选手的初始分数及其实力值，试计算在 $R$ 轮比赛过后，排名第 $Q$ 的选手编号是多少。我们假设选手的实力值两两不同，且每场比赛中实力值较高的总能获胜。</p>
+<h2 id="样例数据"><a href="#样例数据" class="headerlink" title="样例数据"></a>样例数据</h2><p>输入：</p>
+<pre>
+2 4 2 
+7 6 6 7 
+10 5 20 15 
+</pre>
+输出：
+<pre>
+1
+</pre>
+
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>当然，快读还是必不可少的。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">quickread</span><span class="params">(<span class="keyword">int</span> &amp;ret)</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> c;</span><br><span class="line">    ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> ((c = getchar()) &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>);</span><br><span class="line">    <span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)&#123;</span><br><span class="line">        ret = ret * <span class="number">10</span> + (c - <span class="string">'0'</span>), c = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>首先，输入数据不一定完全有序，所以我们先使用 <code>std::sort()</code> 对其排序。<br>然后，使用一个 <code>struct</code> 存下每位选手的分数(sr), 名次(h), 实力值(sl)。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> sr,h,sl;</span><br><span class="line">&#125;s[<span class="number">1000001</span>], a[<span class="number">1000001</span>], b[<span class="number">1000001</span>];</span><br></pre></td></tr></table></figure><br>其中， <code>s</code> 是原数组， <code>a</code> 是胜者组， <code>b</code> 是败者组。<br>再然后，针对每一轮，选择实力较强的放入胜者组，实力较弱的放进败者组， 在本轮结束后， 对两组归并， 放入 <code>s</code> 中。</p>
+<p>归并过程如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(; i &lt; x &amp;&amp; j &lt; y;) &#123;</span><br><span class="line">        <span class="keyword">if</span>(cmp(a[i], b[j])) &#123;</span><br><span class="line">            s[k++] = a[i++];</span><br><span class="line">        &#125;  <span class="keyword">else</span> &#123;</span><br><span class="line">            s[k++] = b[j++];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; x) &#123;</span><br><span class="line">        s[k++] = a[i++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (j &lt; y) &#123;</span><br><span class="line">        s[k++] = b[j++];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><code>cmp</code> 函数实现：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(node x, node y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x.sr == y.sr) &#123;</span><br><span class="line">        <span class="keyword">return</span> x.h &lt; y.h;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x.sr &gt; y.sr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>这步的实现原理：<br><code>i</code> : 胜者组长度<br><code>j</code> : 败者组长度<br><code>k</code> : 合并后长度<br>首先，通过 <code>cmp</code> 函数比较大小，小的在前，大的在后，（其实这个步骤小的在后也可以做，只不过这里只提供一种思路）。<br>然后，依据此结果合并数组。<br>如果在某些特殊情况下，$x \ne y$ ，那么此时需要使用后面的几个 <code>while</code> 循环，把剩下的数全塞进去即可。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//3267494255</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">quickread</span><span class="params">(<span class="keyword">int</span> &amp;ret)</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> c;</span><br><span class="line">    ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> ((c = getchar()) &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>);</span><br><span class="line">    <span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)&#123;</span><br><span class="line">        ret = ret * <span class="number">10</span> + (c - <span class="string">'0'</span>), c = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> sr,h,sl;</span><br><span class="line">&#125;s[<span class="number">1000001</span>], a[<span class="number">1000001</span>], b[<span class="number">1000001</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(node x, node y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x.sr == y.sr) &#123;</span><br><span class="line">        <span class="keyword">return</span> x.h &lt; y.h;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x.sr &gt; y.sr;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(; i &lt; x &amp;&amp; j &lt; y;) &#123;</span><br><span class="line">        <span class="keyword">if</span>(cmp(a[i], b[j])) &#123;</span><br><span class="line">            s[k++] = a[i++];</span><br><span class="line">        &#125;  <span class="keyword">else</span> &#123;</span><br><span class="line">            s[k++] = b[j++];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; x) &#123;</span><br><span class="line">        s[k++] = a[i++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (j &lt; y) &#123;</span><br><span class="line">        s[k++] = b[j++];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> n,r,q;</span><br><span class="line">    quickread(n);</span><br><span class="line">    quickread(r);</span><br><span class="line">    quickread(q);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;n*<span class="number">2</span>;++i) &#123;</span><br><span class="line">        quickread(s[i].sr);</span><br><span class="line">        s[i].h = i+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;n*<span class="number">2</span>;++i) &#123;</span><br><span class="line">        quickread(s[i].sl);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    sort(s,s+<span class="number">2</span>*n,cmp);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;r;++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">0</span>,y = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>;j&lt;n;j++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(s[j*<span class="number">2</span>].sl &gt; s[j*<span class="number">2</span>+<span class="number">1</span>].sl) &#123;</span><br><span class="line">                s[j*<span class="number">2</span>].sr++;</span><br><span class="line">                a[x++] = s[j*<span class="number">2</span>];</span><br><span class="line">                b[y++] = s[j*<span class="number">2</span>+<span class="number">1</span>];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                s[j*<span class="number">2</span>+<span class="number">1</span>].sr++;</span><br><span class="line">                a[x++] = s[j*<span class="number">2</span>+<span class="number">1</span>];</span><br><span class="line">                b[y++] = s[j*<span class="number">2</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        merge(x,y);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>, s[q<span class="number">-1</span>].h);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2020/03/15/83fUEQ.png" alt="83fUEQ.png"></p>
+<p><div class="infocard tip"><br><i class="fa fa-info-circle fa-2x" aria-hidden="true"></i> </p>
+<p><p>图片存储在国外CDN，大陆用户打开有点慢正常</p><br>&lt;/div&gt;<br>可以看到这回答案基本是秒出的。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    littlefrog
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://guiguxiaowa.github.io/2020/03/15/%E9%A2%98%E8%A7%A3---%E6%B4%9B%E8%B0%B7P/" title="题解 - 洛谷P1309【瑞士轮】">http://guiguxiaowa.github.io/2020/03/15/%E9%A2%98%E8%A7%A3---%E6%B4%9B%E8%B0%B7P/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/15/20200315165803/" rel="next" title="20200315165803">
+                <i class="fa fa-chevron-left"></i> 20200315165803
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NzQzNC8yMzkzNA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/20191124153350.png"
+                alt="littlefrog" />
+            
+              <p class="site-author-name" itemprop="name">littlefrog</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/littlefrogsite" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:3443816512@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://wpa.qq.com/msgrd?v=3&uin=3443816512&Site=&Menu=yes" target="_blank" title="QQ交谈">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ交谈</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/crab-in-the-northeast/" title="东北小蟹蟹" target="_blank">东北小蟹蟹</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题外话"><span class="nav-number">1.</span> <span class="nav-text">题外话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原题链接"><span class="nav-number">2.</span> <span class="nav-text">原题链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目简述"><span class="nav-number">3.</span> <span class="nav-text">题目简述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样例数据"><span class="nav-number">4.</span> <span class="nav-text">样例数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">5.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">6.</span> <span class="nav-text">代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">littlefrog</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">2.9k</span>
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+  <!-- 评论 -->
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+
+    <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+</body>
+</html>
