@@ -1906,7 +1906,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a2ff49;
+  background: #0bccff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3167,6 +3167,6 @@ a.am-badge:focus {
 .am-badge-warning {
   background-color: #f37b1d;
 }
-.am-badge-danger {
+.am-badge-fail {
   background-color: #dd514c;
 }
