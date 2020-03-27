@@ -83,15 +83,19 @@
 
 
 
+<meta name="description" content="$\text{KMP}$算法是一种用来解决字符串匹配的问题，比与其相同的朴素算法快得多。 算法核心讲解1. fail 数组初始化 $\text{KMP}$算法的核心就是fail数组，可以说是fail数组的预处理使$\text{KMP}$算法比与其相同的朴素算法快得多。 fail 数组的预处理：对于字符串$S &#x3D; S{0}S{1}S{2}S{3}S{4}S{5}S{6}S{7}$来说，如果$j$满足">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KMP和字典树学习笔记">
 <meta property="og:url" content="http://guiguxiaowa.github.io/2020/03/27/KMP%E5%92%8C%E5%AD%97%E5%85%B8%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="小蛙博客">
+<meta property="og:description" content="$\text{KMP}$算法是一种用来解决字符串匹配的问题，比与其相同的朴素算法快得多。 算法核心讲解1. fail 数组初始化 $\text{KMP}$算法的核心就是fail数组，可以说是fail数组的预处理使$\text{KMP}$算法比与其相同的朴素算法快得多。 fail 数组的预处理：对于字符串$S &#x3D; S{0}S{1}S{2}S{3}S{4}S{5}S{6}S{7}$来说，如果$j$满足">
+<meta property="og:image" content="https://res.jisuanke.com/img/upload/20180517/ba8e866b0a9422bd536fd442a1d2d4bb7da201e1.png">
 <meta property="article:published_time" content="2020-03-27T05:57:48.000Z">
-<meta property="article:modified_time" content="2020-03-27T05:59:12.227Z">
+<meta property="article:modified_time" content="2020-03-27T06:39:45.279Z">
 <meta property="article:author" content="littlefrog">
 <meta property="article:tag" content="notes">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://res.jisuanke.com/img/upload/20180517/ba8e866b0a9422bd536fd442a1d2d4bb7da201e1.png">
 
 
 
@@ -327,7 +331,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  366
                 </span>
               
 
@@ -364,7 +368,15 @@
       
 
       
-        
+        <p>$\text{KMP}$算法是一种用来解决字符串匹配的问题，比与其相同的朴素算法快得多。</p>
+<h2 id="算法核心讲解"><a href="#算法核心讲解" class="headerlink" title="算法核心讲解"></a>算法核心讲解</h2><h3 id="1-fail-数组初始化"><a href="#1-fail-数组初始化" class="headerlink" title="1. fail 数组初始化"></a>1. <code>fail</code> 数组初始化</h3><p><img src="https://res.jisuanke.com/img/upload/20180517/ba8e866b0a9422bd536fd442a1d2d4bb7da201e1.png" alt="fail 数组"></p>
+<p>$\text{KMP}$算法的核心就是<code>fail</code>数组，可以说是<code>fail</code>数组的预处理使$\text{KMP}$算法比与其相同的朴素算法快得多。</p>
+<p><code>fail</code> 数组的预处理：<br>对于字符串$S = S<em>{0}S</em>{1}S<em>{2}S</em>{3}S<em>{4}S</em>{5}S<em>{6}S</em>{7}$来说，如果$j$满足$S<em>{0 \dots j} = S</em>{i-j \dots i}$的最大值，那么$fail_{i} = j$</p>
+<p>例如：$S = “aababaab”$:<br>|  | a | b | b | a | b | a | a | b |<br>| :—————- | :—————- | :—————- | :—————- | :—————- | :—————- | :—————- | :—————- | :—————- |<br>| fail | -1 | 0 | -1 | 0 | -1 | 0 | 1 | 2 |</p>
+<h3 id="2-match-进行匹配"><a href="#2-match-进行匹配" class="headerlink" title="2. match 进行匹配"></a>2. <code>match</code> 进行匹配</h3><p><code>match</code> 一直沿着 <code>fail</code> 往前跳，看是否匹配成功，不成功继续跳。</p>
+<h3 id="3-时间复杂度分析"><a href="#3-时间复杂度分析" class="headerlink" title="3. 时间复杂度分析"></a>3. 时间复杂度分析</h3><p>匹配过程基本$O(|P|+|T|)$ (初始化就是使用 P 串和自己匹配)</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getFail</span><span class="params">(<span class="keyword">char</span> *P)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="built_in">strlen</span>(P);</span><br><span class="line">    fail[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> match = fail[i - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">while</span> (match &gt;= <span class="number">0</span> &amp;&amp; P[match + <span class="number">1</span>] != P[i]) &#123;</span><br><span class="line">            match = fail[match];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (P[match + <span class="number">1</span>] == P[i]) &#123;</span><br><span class="line">            match++;</span><br><span class="line">        &#125;</span><br><span class="line">        fail[i] = match;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">KMP</span><span class="params">(<span class="keyword">char</span> *T, <span class="keyword">char</span> *P)</span> </span>&#123;  <span class="comment">// T 是文本串，P 是匹配串</span></span><br><span class="line">    <span class="keyword">int</span> n = <span class="built_in">strlen</span>(T), m = <span class="built_in">strlen</span>(P);</span><br><span class="line">    <span class="keyword">int</span> match = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="keyword">while</span> (match &gt;= <span class="number">0</span> &amp;&amp; P[match + <span class="number">1</span>] != T[i]) &#123;</span><br><span class="line">            match = fail[match];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (P[match + <span class="number">1</span>] == T[i]) &#123;</span><br><span class="line">            match++;</span><br><span class="line">            <span class="keyword">if</span> (match + <span class="number">1</span> == m) &#123;  <span class="comment">// 匹配成功</span></span><br><span class="line">                <span class="keyword">return</span> i - m + <span class="number">1</span>;  <span class="comment">// 计算母串中起始下标</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -477,8 +489,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -579,6 +600,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法核心讲解"><span class="nav-number">1.</span> <span class="nav-text">算法核心讲解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-fail-数组初始化"><span class="nav-number">1.1.</span> <span class="nav-text">1. fail 数组初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-match-进行匹配"><span class="nav-number">1.2.</span> <span class="nav-text">2. match 进行匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-时间复杂度分析"><span class="nav-number">1.3.</span> <span class="nav-text">3. 时间复杂度分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -606,7 +643,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">3.5k</span>
+    <span title="Site words total count">3.8k</span>
   
 </div>
 
