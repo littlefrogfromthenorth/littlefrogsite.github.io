@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="notes," />
+  <meta name="keywords" content="sln," />
 
 
 
@@ -83,19 +83,17 @@
 
 
 
-<meta name="description" content="$\text{KMP}$算法是一种用来解决字符串匹配的问题，比与其相同的朴素算法快得多。 算法核心讲解1. fail 数组初始化 $\text{KMP}$算法的核心就是fail数组，可以说是fail数组的预处理使$\text{KMP}$算法比与其相同的朴素算法快得多。 fail 数组的预处理：对于字符串  $S$  来说，如果 $j$  满足 $S{0…j} &#x3D; S{i-j…i}$ 的最大值，那么">
+<meta name="description" content="原题链接题目描述现在已知 $N$ 件商品，和搬运它们其中每一件的费用。现在搬家公司老板 Mr.sb 决定让我们每次任意选取 $2$ 件商品。然后这 $2$ 件商品只算一件商品的费用。但是这个商品的搬运费用是将选出的 $2$ 个商品的费用之和除以 $k$ 的运算结果。如此反复。直到只收一件商品的钱。这个就是商店要付的费用。掌柜的想尽可能的少付钱，以便将更多的钱捐给希望工程。所以请你帮他计算一下最少只">
 <meta property="og:type" content="article">
-<meta property="og:title" content="KMP和字典树学习笔记">
-<meta property="og:url" content="http://guiguxiaowa.github.io/2020/03/27/KMP%E5%92%8C%E5%AD%97%E5%85%B8%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="题解 - 洛谷P2094【运输】">
+<meta property="og:url" content="http://guiguxiaowa.github.io/2020/04/02/%E9%A2%98%E8%A7%A3---%E6%B4%9B%E8%B0%B7P/index.html">
 <meta property="og:site_name" content="小蛙博客">
-<meta property="og:description" content="$\text{KMP}$算法是一种用来解决字符串匹配的问题，比与其相同的朴素算法快得多。 算法核心讲解1. fail 数组初始化 $\text{KMP}$算法的核心就是fail数组，可以说是fail数组的预处理使$\text{KMP}$算法比与其相同的朴素算法快得多。 fail 数组的预处理：对于字符串  $S$  来说，如果 $j$  满足 $S{0…j} &#x3D; S{i-j…i}$ 的最大值，那么">
-<meta property="og:image" content="https://res.jisuanke.com/img/upload/20180517/ba8e866b0a9422bd536fd442a1d2d4bb7da201e1.png">
-<meta property="article:published_time" content="2020-03-27T05:57:48.000Z">
-<meta property="article:modified_time" content="2020-03-31T03:35:32.041Z">
+<meta property="og:description" content="原题链接题目描述现在已知 $N$ 件商品，和搬运它们其中每一件的费用。现在搬家公司老板 Mr.sb 决定让我们每次任意选取 $2$ 件商品。然后这 $2$ 件商品只算一件商品的费用。但是这个商品的搬运费用是将选出的 $2$ 个商品的费用之和除以 $k$ 的运算结果。如此反复。直到只收一件商品的钱。这个就是商店要付的费用。掌柜的想尽可能的少付钱，以便将更多的钱捐给希望工程。所以请你帮他计算一下最少只">
+<meta property="article:published_time" content="2020-04-02T03:20:58.000Z">
+<meta property="article:modified_time" content="2020-04-02T03:38:08.878Z">
 <meta property="article:author" content="littlefrog">
-<meta property="article:tag" content="notes">
+<meta property="article:tag" content="sln">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://res.jisuanke.com/img/upload/20180517/ba8e866b0a9422bd536fd442a1d2d4bb7da201e1.png">
 
 
 
@@ -125,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://guiguxiaowa.github.io/2020/03/27/KMP和字典树学习笔记/"/>
+  <link rel="canonical" href="http://guiguxiaowa.github.io/2020/04/02/题解---洛谷P/"/>
 
 
 
 
 
-  <title>KMP和字典树学习笔记 | 小蛙博客</title>
+  <title>题解 - 洛谷P2094【运输】 | 小蛙博客</title>
   
 
 
@@ -248,7 +246,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://guiguxiaowa.github.io/2020/03/27/KMP%E5%92%8C%E5%AD%97%E5%85%B8%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="http://guiguxiaowa.github.io/2020/04/02/%E9%A2%98%E8%A7%A3---%E6%B4%9B%E8%B0%B7P/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="littlefrog">
@@ -265,7 +263,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">KMP和字典树学习笔记</h2>
+          <h2 class="post-title" itemprop="name headline">题解 - 洛谷P2094【运输】</h2>
         
 
         <div class="post-meta">
@@ -277,8 +275,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-27T13:57:48+08:00">
-                2020-03-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-02T11:20:58+08:00">
+                2020-04-02
               </time>
             
 
@@ -300,8 +298,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
+                  <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index">
+                    <span itemprop="name">题解</span>
                   </a>
                 </span>
 
@@ -331,7 +329,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  348
+                  353
                 </span>
               
 
@@ -368,45 +366,19 @@
       
 
       
-        <p>$\text{KMP}$算法是一种用来解决字符串匹配的问题，比与其相同的朴素算法快得多。</p>
-<h2 id="算法核心讲解"><a href="#算法核心讲解" class="headerlink" title="算法核心讲解"></a>算法核心讲解</h2><h3 id="1-fail-数组初始化"><a href="#1-fail-数组初始化" class="headerlink" title="1. fail 数组初始化"></a>1. <code>fail</code> 数组初始化</h3><p><img src="https://res.jisuanke.com/img/upload/20180517/ba8e866b0a9422bd536fd442a1d2d4bb7da201e1.png" alt="fail 数组"></p>
-<p>$\text{KMP}$算法的核心就是<code>fail</code>数组，可以说是<code>fail</code>数组的预处理使$\text{KMP}$算法比与其相同的朴素算法快得多。</p>
-<p><code>fail</code> 数组的预处理：<br>对于字符串  $S$  来说，如果 $j$  满足 $S<em>{0…j} = S</em>{i-j…i}$ 的最大值，那么 $fail_{i} = j$</p>
-<p>例如：$S = “aababaab”$:</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">a</th>
-<th style="text-align:center">b</th>
-<th style="text-align:center">b</th>
-<th style="text-align:center">a</th>
-<th style="text-align:center">b</th>
-<th style="text-align:center">a</th>
-<th style="text-align:center">a</th>
-<th style="text-align:center">b</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">fail</td>
-<td style="text-align:center">-1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">-1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">-1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="2-match-进行匹配"><a href="#2-match-进行匹配" class="headerlink" title="2. match 进行匹配"></a>2. <code>match</code> 进行匹配</h3><p><code>match</code> 一直沿着 <code>fail</code> 往前跳，看是否匹配成功，不成功继续跳。</p>
-<h3 id="3-时间复杂度分析"><a href="#3-时间复杂度分析" class="headerlink" title="3. 时间复杂度分析"></a>3. 时间复杂度分析</h3><p>匹配过程基本$O(|P|+|T|)$ (初始化就是使用 P 串和自己匹配)</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getFail</span><span class="params">(<span class="keyword">char</span> *P)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="built_in">strlen</span>(P);</span><br><span class="line">    fail[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> match = fail[i - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">while</span> (match &gt;= <span class="number">0</span> &amp;&amp; P[match + <span class="number">1</span>] != P[i]) &#123;</span><br><span class="line">            match = fail[match];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (P[match + <span class="number">1</span>] == P[i]) &#123;</span><br><span class="line">            match++;</span><br><span class="line">        &#125;</span><br><span class="line">        fail[i] = match;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">KMP</span><span class="params">(<span class="keyword">char</span> *T, <span class="keyword">char</span> *P)</span> </span>&#123;  <span class="comment">// T 是文本串，P 是匹配串</span></span><br><span class="line">    <span class="keyword">int</span> n = <span class="built_in">strlen</span>(T), m = <span class="built_in">strlen</span>(P);</span><br><span class="line">    <span class="keyword">int</span> match = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="keyword">while</span> (match &gt;= <span class="number">0</span> &amp;&amp; P[match + <span class="number">1</span>] != T[i]) &#123;</span><br><span class="line">            match = fail[match];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (P[match + <span class="number">1</span>] == T[i]) &#123;</span><br><span class="line">            match++;</span><br><span class="line">            <span class="keyword">if</span> (match + <span class="number">1</span> == m) &#123;  <span class="comment">// 匹配成功</span></span><br><span class="line">                <span class="keyword">return</span> i - m + <span class="number">1</span>;  <span class="comment">// 计算母串中起始下标</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="原题链接"><a href="#原题链接" class="headerlink" title="原题链接"></a><a title = "传送门" href="https://www.luogu.com.cn/problem/P2094" target="_blank" rel="noopener">原题链接</a></h2><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>现在已知 $N$ 件商品，和搬运它们其中每一件的费用。现在搬家公司老板 Mr.sb 决定让我们每次任意选取 $2$ 件商品。然后这 $2$ 件商品只算一件商品的费用。但是这个商品的搬运费用是将选出的 $2$ 个商品的费用之和除以 $k$ 的运算结果。如此反复。直到只收一件商品的钱。这个就是商店要付的费用。掌柜的想尽可能的少付钱，以便将更多的钱捐给希望工程。所以请你帮他计算一下最少只用付多少钱。</p>
+<h2 id="样例数据"><a href="#样例数据" class="headerlink" title="样例数据"></a>样例数据</h2><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre>
+5 2
+1 2 3 4 5
+</pre>
+
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre>
+1
+</pre>
+
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这世界上有一种东西叫“大根堆”，还有一种东西叫“堆排序”，很快，又到了 <code>C++</code> 完虐 <code>Pascal</code> 的时候了。</p>
+<p>这道题只需要使用堆排序，每次取出对顶两个元素，在按照题意计算，即可。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	priority_queue&lt;<span class="keyword">int</span> &gt; pq;</span><br><span class="line">	<span class="keyword">int</span> n, k;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;k);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">		<span class="keyword">int</span> tmp;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;tmp);</span><br><span class="line">		pq.push(tmp);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 按照题意模拟计算</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n<span class="number">-1</span>; ++i) &#123;</span><br><span class="line">		<span class="keyword">int</span> tmp1 = pq.top();</span><br><span class="line">		pq.pop();</span><br><span class="line">		<span class="keyword">int</span> tmp2 = pq.top();</span><br><span class="line">		pq.pop();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">int</span> tmp3 = (tmp1 + tmp2) / k;</span><br><span class="line">		pq.push(tmp3);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, pq.top());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -426,7 +398,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://guiguxiaowa.github.io/2020/03/27/KMP%E5%92%8C%E5%AD%97%E5%85%B8%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="KMP和字典树学习笔记">http://guiguxiaowa.github.io/2020/03/27/KMP%E5%92%8C%E5%AD%97%E5%85%B8%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a>
+    <a href="http://guiguxiaowa.github.io/2020/04/02/%E9%A2%98%E8%A7%A3---%E6%B4%9B%E8%B0%B7P/" title="题解 - 洛谷P2094【运输】">http://guiguxiaowa.github.io/2020/04/02/%E9%A2%98%E8%A7%A3---%E6%B4%9B%E8%B0%B7P/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -441,7 +413,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/notes/" rel="tag"><i class="fa fa-tag"></i>notes</a>
+            <a href="/tags/sln/" rel="tag"><i class="fa fa-tag"></i>sln</a>
           
         </div>
       
@@ -454,8 +426,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/18/slnjskcontest32/" rel="next" title="题解 - 计蒜客月赛原题 【积木游戏】">
-                <i class="fa fa-chevron-left"></i> 题解 - 计蒜客月赛原题 【积木游戏】
+              <a href="/2020/03/27/KMP%E5%92%8C%E5%AD%97%E5%85%B8%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="KMP和字典树学习笔记">
+                <i class="fa fa-chevron-left"></i> KMP和字典树学习笔记
               </a>
             
           </div>
@@ -463,10 +435,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/04/02/%E9%A2%98%E8%A7%A3---%E6%B4%9B%E8%B0%B7P/" rel="prev" title="题解 - 洛谷P2094【运输】">
-                题解 - 洛谷P2094【运输】 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -643,7 +611,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法核心讲解"><span class="nav-number">1.</span> <span class="nav-text">算法核心讲解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-fail-数组初始化"><span class="nav-number">1.1.</span> <span class="nav-text">1. fail 数组初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-match-进行匹配"><span class="nav-number">1.2.</span> <span class="nav-text">2. match 进行匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-时间复杂度分析"><span class="nav-number">1.3.</span> <span class="nav-text">3. 时间复杂度分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原题链接"><span class="nav-number">1.</span> <span class="nav-text">原题链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">2.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样例数据"><span class="nav-number">3.</span> <span class="nav-text">样例数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入"><span class="nav-number">3.1.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出"><span class="nav-number">3.2.</span> <span class="nav-text">输出</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">4.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">5.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
 
           </div>
