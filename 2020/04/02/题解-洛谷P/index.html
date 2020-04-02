@@ -83,14 +83,14 @@
 
 
 
-<meta name="description" content="我们要养成良好的编码习惯,数组大小参考: char：50000005，int：10000001，long long：2000001">
+<meta name="description" content="原题链接题面简述以及大概思路统计最近24小时内的船只上的人的国籍，直接模拟。 代码1234567891011121314151617181920212223242526272829303132333435363738394041#include &lt;bits&#x2F;stdc++.h&gt;using namespace std;struct ship &amp;#123;	int s, t;&amp;#125;;q">
 <meta property="og:type" content="article">
-<meta property="og:title" content="题解-洛谷P2104【二进制】">
+<meta property="og:title" content="题解-洛谷P2058海港">
 <meta property="og:url" content="http://guiguxiaowa.github.io/2020/04/02/%E9%A2%98%E8%A7%A3-%E6%B4%9B%E8%B0%B7P/index.html">
 <meta property="og:site_name" content="小蛙博客">
-<meta property="og:description" content="我们要养成良好的编码习惯,数组大小参考: char：50000005，int：10000001，long long：2000001">
+<meta property="og:description" content="原题链接题面简述以及大概思路统计最近24小时内的船只上的人的国籍，直接模拟。 代码1234567891011121314151617181920212223242526272829303132333435363738394041#include &lt;bits&#x2F;stdc++.h&gt;using namespace std;struct ship &amp;#123;	int s, t;&amp;#125;;q">
 <meta property="article:published_time" content="2020-04-02T03:55:54.000Z">
-<meta property="article:modified_time" content="2020-04-02T04:03:08.697Z">
+<meta property="article:modified_time" content="2020-04-02T11:27:34.028Z">
 <meta property="article:author" content="littlefrog">
 <meta property="article:tag" content="sln">
 <meta name="twitter:card" content="summary">
@@ -129,7 +129,7 @@
 
 
 
-  <title>题解-洛谷P2104【二进制】 | 小蛙博客</title>
+  <title>题解-洛谷P2058海港 | 小蛙博客</title>
   
 
 
@@ -263,7 +263,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">题解-洛谷P2104【二进制】</h2>
+          <h2 class="post-title" itemprop="name headline">题解-洛谷P2058海港</h2>
         
 
         <div class="post-meta">
@@ -329,7 +329,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  25
+                  218
                 </span>
               
 
@@ -366,12 +366,8 @@
       
 
       
-        <div class="infocard tip">
-<i class="fa fa-info-circle fa-2x" aria-hidden="true"></i> 
-我们要养成良好的编码习惯,数组大小参考:
-char：50000005，int：10000001，long long：2000001
-</div>
-
+        <h2 id="原题链接"><a href="#原题链接" class="headerlink" title="原题链接"></a><a href="https://www.luogu.com.cn/problem/P2058" target="_blank" rel="noopener">原题链接</a></h2><h2 id="题面简述以及大概思路"><a href="#题面简述以及大概思路" class="headerlink" title="题面简述以及大概思路"></a>题面简述以及大概思路</h2><p>统计最近24小时内的船只上的人的国籍，直接模拟。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ship</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> s, t;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">queue</span>&lt;ship&gt; qq; <span class="comment">// Ships</span></span><br><span class="line">ship h; <span class="comment">// Current ship</span></span><br><span class="line"><span class="keyword">int</span> nation[<span class="number">1000001</span>]; <span class="comment">// Nationalities of people on ships</span></span><br><span class="line"><span class="keyword">int</span> n, t, m, x;</span><br><span class="line"><span class="keyword">int</span> ans; <span class="comment">// Total of nationalities</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=n;++i) &#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;t&gt;&gt;m;</span><br><span class="line">        <span class="keyword">while</span>(!qq.empty()) &#123; <span class="comment">// Scan the queue of ships if this queue isn' t empty.</span></span><br><span class="line">			h = qq.front();</span><br><span class="line">			<span class="keyword">if</span>(h.t + <span class="number">86400</span> &lt;= t) &#123; <span class="comment">// If time exceeded</span></span><br><span class="line">				nation[h.s] --;  	</span><br><span class="line">				<span class="keyword">if</span>(nation[h.s] == <span class="number">0</span>) &#123;</span><br><span class="line">					ans--;</span><br><span class="line">				&#125;</span><br><span class="line">				qq.pop(); <span class="comment">// Pop the outdated people</span></span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">			&#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j&lt;=m;++j) &#123;</span><br><span class="line">            </span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;x; <span class="comment">// Input the nationalities of people on ship</span></span><br><span class="line">			h.s = x;</span><br><span class="line">			h.t = t;</span><br><span class="line">			qq.push(h); <span class="comment">// Here comes a new boat !!!</span></span><br><span class="line">			nation[x]++;</span><br><span class="line">			<span class="keyword">if</span>(nation[x] == <span class="number">1</span>) &#123; <span class="comment">// If 'nation[x]' is '1' it means it is a new nationality </span></span><br><span class="line">				ans++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -391,7 +387,7 @@ char：50000005，int：10000001，long long：2000001
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://guiguxiaowa.github.io/2020/04/02/%E9%A2%98%E8%A7%A3-%E6%B4%9B%E8%B0%B7P/" title="题解-洛谷P2104【二进制】">http://guiguxiaowa.github.io/2020/04/02/%E9%A2%98%E8%A7%A3-%E6%B4%9B%E8%B0%B7P/</a>
+    <a href="http://guiguxiaowa.github.io/2020/04/02/%E9%A2%98%E8%A7%A3-%E6%B4%9B%E8%B0%B7P/" title="题解-洛谷P2058海港">http://guiguxiaowa.github.io/2020/04/02/%E9%A2%98%E8%A7%A3-%E6%B4%9B%E8%B0%B7P/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -484,8 +480,17 @@ char：50000005，int：10000001，long long：2000001
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -586,6 +591,22 @@ char：50000005，int：10000001，long long：2000001
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原题链接"><span class="nav-number">1.</span> <span class="nav-text">原题链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题面简述以及大概思路"><span class="nav-number">2.</span> <span class="nav-text">题面简述以及大概思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -613,7 +634,7 @@ char：50000005，int：10000001，long long：2000001
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">4.2k</span>
+    <span title="Site words total count">4.4k</span>
   
 </div>
 
